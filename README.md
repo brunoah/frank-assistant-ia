@@ -50,7 +50,8 @@ plugin-ready
 
 ## 🗺 Roadmap
 
-Voir ROADMAP.md
+Consulter la roadmap officielle :  
+👉 [ROADMAP](ROADMAP.md)
 
 ------------------------------------------------------------------------
 
