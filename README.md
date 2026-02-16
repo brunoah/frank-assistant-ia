@@ -29,15 +29,51 @@ assistant intelligent évolutif.
 
 ------------------------------------------------------------------------
 
-## 🏗 Architecture
+# 🏗 Schéma d'Architecture
+
+``` mermaid
+flowchart TD
+
+User -->|Voice Input| STT
+STT --> Orchestrator
+Orchestrator -->|Route| Tools
+Orchestrator --> Memory
+Orchestrator --> RAG
+Tools --> Orchestrator
+RAG --> Orchestrator
+Memory --> Orchestrator
+Orchestrator --> TTS
+TTS -->|Voice Output| User
+
+subgraph Core
+Orchestrator
+end
+
+subgraph Intelligence
+Memory
+RAG
+end
+
+subgraph Interface
+STT
+TTS
+HUD
+end
+
+Orchestrator --> HUD
+```
+
+------------------------------------------------------------------------
+
+# 📂 Structure Projet
 
     src/
-     ├── core/          # Orchestrator & logique centrale
-     ├── tools/         # Plugins & outils
-     ├── memory/        # Mémoire long terme & profil
-     ├── rag/           # Indexation & recherche
-     ├── ui/            # HUD & interface visuelle
-     └── config/        # Configuration centralisée
+     ├── core/
+     ├── tools/
+     ├── memory/
+     ├── rag/
+     ├── ui/
+     └── config/
 
 ------------------------------------------------------------------------
 
