@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.tmp
+*.egg-info/
+
+# Virtual env
+.venv/
+env/
+venv/
+
+# Environment
+.env
+data/.env
+
+# Data dynamic
+data/*.json
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+Thumbs.db
+desktop.ini
+.zip
