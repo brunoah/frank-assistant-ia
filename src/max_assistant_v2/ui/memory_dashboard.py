@@ -23,6 +23,33 @@ def _importance_color(value: float) -> str:
     else:
         return "#4dff88"  # vert
 
+def _emotion_value(emotion: str) -> int:
+    mapping = {
+        "CALME": 1,
+        "FOCUS": 2,
+        "REFLEXION": 3,
+        "ERREUR": 4
+    }
+    return mapping.get(emotion.upper(), 0)
+
+
+def _emotion_color(emotion: str) -> str:
+    e = (emotion or "").strip().upper()
+
+    # Mets ici TES émotions USER connues si tu en as (exemples)
+    colors = {
+        "JOIE": "#4dff88",
+        "TRISTESSE": "#4d88ff",
+        "COLERE": "#ff4c4c",
+        "PEUR": "#ffaa00",
+        "SURPRISE": "#00ccff",
+        "NEUTRE": "#aaaaaa",
+    }
+
+    return colors.get(e, "#888888")
+
+
+
 class MemoryDashboardWindow:
 
     def __init__(self, root: tk.Tk, profile_obj):
@@ -50,7 +77,24 @@ class MemoryDashboardWindow:
                         fieldbackground="#161616",
                         foreground="#EAEAEA",
                         rowheight=24)
+    
 
+    def _build_timeline_tab(self):
+
+        container = ttk.Frame(self.tab_timeline)
+        container.pack(fill="both", expand=True, padx=10, pady=10)
+
+        self.timeline_canvas = tk.Canvas(
+            container,
+            bg="#111111",
+            height=350,
+            highlightthickness=0
+        )
+        self.timeline_canvas.pack(fill="both", expand=True)
+
+        self.animate_timeline()
+
+    
     def _build_ui(self):
 
         top = ttk.Frame(self.win)
@@ -68,9 +112,118 @@ class MemoryDashboardWindow:
 
         self.nb.add(self.tab_projects, text="Projets")
         self.nb.add(self.tab_prefs, text="Préférences")
+        self.tab_timeline = ttk.Frame(self.nb)
+        self.nb.add(self.tab_timeline, text="Timeline émotionnelle")
+        self._build_timeline_tab()
+
 
         self._build_projects_tab()
         self._build_prefs_tab()
+
+    def animate_timeline(self):
+
+        data = getattr(self.profile, "data", {}) or {}
+        history = data.get("emotion_history", [])
+        history = history[-30:]
+
+        self.timeline_canvas.delete("all")
+
+        if not history:
+            self.timeline_canvas.create_text(
+                400, 175,
+                text="Aucune donnée émotionnelle",
+                fill="#888888",
+                font=("Segoe UI", 12)
+            )
+            self.win.after(1500, self.animate_timeline)
+            return
+
+        width = self.timeline_canvas.winfo_width()
+        height = self.timeline_canvas.winfo_height()
+
+        # =========================
+        # AXE VERTICAL DYNAMIQUE (émotions USER réelles)
+        # =========================
+        SPACING = 60  # même espacement que ta courbe
+
+        # liste des émotions réellement présentes (ordre d’apparition)
+        emotions = []
+        seen = set()
+        for e in history:
+            emo = (e.get("emotion") or "").strip()
+            if not emo:
+                continue
+            if emo not in seen:
+                seen.add(emo)
+                emotions.append(emo)
+
+        # fallback si vide
+        if not emotions:
+            emotions = ["(aucune)"]
+
+        # map émotion -> niveau (1..N)
+        emo_level = {emo: idx + 1 for idx, emo in enumerate(emotions)}
+
+        # dessiner lignes + labels
+        for emo, lvl in emo_level.items():
+            y = height - (lvl * SPACING)
+
+            self.timeline_canvas.create_line(
+                90, y,
+                width - 20, y,
+                fill="#222222"
+            )
+
+            self.timeline_canvas.create_text(
+                10, y,
+                text=emo,
+                anchor="w",
+                fill=_emotion_color(emo),
+                font=("Segoe UI", 9, "bold")
+            )
+
+
+
+        max_points = 30
+        history = history[-max_points:]
+
+        step_x = width / max(1, len(history))
+
+        previous = None
+
+        for i, entry in enumerate(history):
+
+            emotion = (entry.get("emotion") or "").strip()
+            intensity = float(entry.get("intensity", 0.5))
+
+            lvl = emo_level.get(emotion, 1)
+            x = i * step_x + 110   # on décale à droite pour laisser la place aux labels
+            y = height - (lvl * SPACING)
+
+            r = 3 + int(6 * max(0.0, min(1.0, intensity)))  # rayon 3..9
+            color = _emotion_color(emotion)
+            
+            # Point
+            self.timeline_canvas.create_oval(
+                x - r, y - r, x + r, y + r,
+                fill=color,
+                outline=""
+            )
+
+            # Ligne
+            if previous:
+                self.timeline_canvas.create_line(
+                    previous[0], previous[1],
+                    x, y,
+                    fill=color,
+                    width=2,
+                    smooth=True
+                )
+
+            previous = (x, y)
+
+        self.win.after(1500, self.animate_timeline)
+
 
     # =============================
     # PROJECTS

@@ -15,6 +15,7 @@ from max_assistant_v2.memory.memory_writer import MemoryWriter
 from max_assistant_v2.tools.tool_registry import ToolRegistry
 from max_assistant_v2.tools.system_tools import SystemTools
 from max_assistant_v2.ui.console_hud import ConsoleStateHUD
+from max_assistant_v2.memory.profile import ProfileMemory
 
 log = get_logger(__name__)
 
@@ -28,6 +29,7 @@ class Orchestrator:
 
         self.short_mem = ShortTermMemory(max_turns=12)
         self.long_mem = LongTermMemory(path=settings.LONG_TERM_PATH)
+        self.profile = ProfileMemory()
 
         self.embed = Embeddings()
         self.vstore = VectorStore(dir_path=settings.VECTOR_DIR, embeddings=self.embed)
@@ -39,6 +41,29 @@ class Orchestrator:
         self.router = Router(llm=self.llm)
 
         self.hud = hud 
+
+    def record_user_emotion(self):
+
+        emotion, intensity = self.router.profile.get_emotion()
+
+        if not emotion:
+            return
+
+        if "emotion_history" not in self.profile.data:
+            self.profile.data["emotion_history"] = []
+
+        self.profile.data["emotion_history"].append({
+            "emotion": emotion.upper(),
+            "intensity": float(intensity),
+            "timestamp": datetime.now().timestamp()
+        })
+
+        # limite historique
+        self.profile.data["emotion_history"] = self.profile.data["emotion_history"][-200:]
+
+        if hasattr(self.profile, "save"):
+            self.profile.save()
+    
 
     def render_emotion(self):
         emotion, intensity = self.router.profile.get_emotion()
@@ -114,6 +139,9 @@ class Orchestrator:
                 retrieved=retrieved,
                 state_cb=self.console_hud.set_state
             )
+
+            # Enregistrer émotion USER détectée
+            self.record_user_emotion()
 
             # -------------------------
             # Réponse prête → FRANK calme
