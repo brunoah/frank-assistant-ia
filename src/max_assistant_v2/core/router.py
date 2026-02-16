@@ -8,6 +8,7 @@ from max_assistant_v2.tools.web_tools import WebTools
 from max_assistant_v2.utils.logger import get_logger
 from max_assistant_v2.memory.profile import ProfileMemory
 from max_assistant_v2.core.project_manager import ProjectManager
+from max_assistant_v2.tools.memory_dashboard_tool import open_memory_dashboard
 
 log = get_logger(__name__)
 
@@ -26,7 +27,8 @@ class Router:
         self.tool_registry.register("web_search", self.web.web_search)
         self.tool_registry.register("screenshot", self.sys.screenshot)
         self.tool_registry.register("weather", self.web.weather)
-
+        self.tool_registry.register("memory_dashboard", open_memory_dashboard)
+        
         self.projects = ProjectManager("data/projects.json")
 
     def detect_implicit_emotion(self, text: str):

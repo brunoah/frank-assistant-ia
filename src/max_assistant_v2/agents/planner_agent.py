@@ -14,7 +14,7 @@ Schéma strict :
 
 {
   "type": "tool" | "answer",
-  "tool": "open_app" | "weather" | "web_search" | "none",
+  "tool": "open_app" | "weather" | "web_search" | "memory_dashboard" | "none",
   "args": {},
   "final": "réponse courte à dire à l'utilisateur"
 }
@@ -37,6 +37,9 @@ utilise type="tool", tool="web_search" et args={"query":"..."}.
 utilise type="tool", tool="weather" et args={"city":"<ville>"}.
 La ville est celle donnée par l'utilisateur (ex: "météo de Lyon" → "Lyon").
 Si aucune ville n'est donnée, mets "Paris".
+
+2quater. Si l'utilisateur demande d'afficher la mémoire (mots-clés: "dashboard mémoire", "montre ta mémoire", "affiche la mémoire", "mémoire frank"),
+utilise type="tool", tool="memory_dashboard" et args={}.
 
 3. Si la commande est ambiguë, type="answer".
 
