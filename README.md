@@ -4,6 +4,8 @@
 développeurs avancés. Architecture propre, système de plugins, mémoire
 persistante, RAG local et HUD dynamique.
 
+⭐ Si ce projet vous intéresse, n'hésitez pas à lui attribuer une étoile.
+
 ------------------------------------------------------------------------
 
 ## 🚀 Vision
