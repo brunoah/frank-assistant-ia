@@ -5,6 +5,7 @@ import os
 import sounddevice as sd
 import numpy as np
 import wave
+import random
 
 class PiperTTS:
     def __init__(self, piper_exe: str, piper_model: str):
@@ -35,8 +36,53 @@ class PiperTTS:
 
         return speed, gain
 
+    def _apply_micro_variation(self, speed: float, gain: float):
+        """
+        Applique de très légères variations naturelles
+        pour éviter une voix trop mécanique.
+        """
+
+        # variation vitesse ±1.5%
+        speed_variation = random.uniform(-0.015, 0.015)
+
+        # variation volume ±3%
+        gain_variation = random.uniform(-0.03, 0.03)
+
+        speed = speed + speed_variation
+        gain = gain + gain_variation
+
+        # limites de sécurité
+        speed = max(0.96, min(1.04, speed))
+        gain = max(0.85, min(1.10, gain))
+
+        return speed, gain
+
+    def _naturalize_text(self, text: str, user_emotion=None):
+        """
+        Ajoute de micro-pauses naturelles selon l'état.
+        """
+
+        if not text:
+            return text
+
+        # Pause légère après virgules
+        text = text.replace(",", ", ")
+
+        # Fatigué → phrases plus respirées
+        if user_emotion == "fatigué":
+            text = text.replace(".", "... ")
+
+        # Stressé → micro pause avant infos importantes
+        if user_emotion == "stressé":
+            text = text.replace(":", " : ")
+
+        return text
+
 
     def say(self, text: str, hud=None, user_emotion=None, user_intensity=0.0):
+
+        # --- Micro naturalisation texte ---
+        text = self._naturalize_text(text, user_emotion)
 
         print(f"\n🟢 FRANK: {text}\n")
 
@@ -58,6 +104,8 @@ class PiperTTS:
             with wave.open(out_wav, "rb") as wf:
                 sr = wf.getframerate()
                 speed_factor, gain = self._voice_from_user_state(user_emotion, user_intensity)
+                # --- Micro variations naturelles ---
+                speed_factor, gain = self._apply_micro_variation(speed_factor, gain)
                 out_sr = int(sr * speed_factor)
                 total_frames = wf.getnframes()
 

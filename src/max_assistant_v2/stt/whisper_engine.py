@@ -156,6 +156,6 @@ class WhisperSTT:
 
         command = self.transcribe(audio_resampled)
 
-        print("🧠 COMMANDE:", command)
+        # print("🧠 COMMANDE:", command)
 
         return command

@@ -16,3 +16,6 @@
 {"text": "Bruno est le nom de l'utilisateur.", "metadata": {"role": "memory", "ts": "2026-02-17T06:41:20.365486+00:00", "confidence": 1.0, "tags": ["identity"], "kind": "fact"}}
 {"text": "Nom de la femme : Laurie", "metadata": {"role": "memory", "ts": "2026-02-17T06:41:49.783209+00:00", "confidence": 1.0, "tags": ["identity"], "kind": "fact"}}
 {"text": "J'ai rencontré Bruno.", "metadata": {"role": "memory", "ts": "2026-02-17T06:43:45.099885+00:00", "confidence": 1.0, "tags": ["identity"], "kind": "fact"}}
+{"text": "Les sous-titres peuvent être un excellent moyen de rendre les vidéos accessibles à une audience plus large.", "metadata": {"role": "memory", "ts": "2026-02-17T06:52:17.655834+00:00", "confidence": 0.9, "tags": ["other"], "kind": "fact"}}
+{"text": "Je m'appelle Bruno", "metadata": {"role": "memory", "ts": "2026-02-17T06:52:37.001231+00:00", "confidence": 1.0, "tags": ["identity"], "kind": "fact"}}
+{"text": "Ouvre le dashboard mémoire.", "metadata": {"role": "memory", "ts": "2026-02-17T06:54:54.128004+00:00", "confidence": 0.9, "tags": ["other"], "kind": "fact"}}
