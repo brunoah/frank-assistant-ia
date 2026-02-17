@@ -3,3 +3,6 @@
 {"text": "Dashboard mémoire ouvert", "metadata": {"role": "memory", "ts": "2026-02-16T18:31:56.517469+00:00", "confidence": 1.0, "tags": ["other"], "kind": "fact"}}
 {"text": "Utilisateur a demandé d'ouvrir le dashboard de mémoire.", "metadata": {"role": "memory", "ts": "2026-02-16T18:36:53.625224+00:00", "confidence": 1.0, "tags": ["other"], "kind": "fact"}}
 {"text": "Projet Bruno traitant des barbes à papa", "metadata": {"role": "memory", "ts": "2026-02-16T18:39:40.442800+00:00", "confidence": 1.0, "tags": ["project"], "kind": "fact"}}
+{"text": "Profil résumé : Sous-titres réalisés par la communauté d'Amara.org", "metadata": {"role": "memory", "ts": "2026-02-17T05:25:45.993937+00:00", "confidence": 1.0, "tags": ["identity"], "kind": "fact"}}
+{"text": "Bonjour, je m'appelle Bruno.", "metadata": {"role": "memory", "ts": "2026-02-17T05:33:56.627892+00:00", "confidence": 1.0, "tags": ["identity"], "kind": "fact"}}
+{"text": "Ouvrir le dashboard mémoire.", "metadata": {"role": "memory", "ts": "2026-02-17T05:39:03.641727+00:00", "confidence": 1.0, "tags": ["other"], "kind": "fact"}}

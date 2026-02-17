@@ -51,7 +51,8 @@ class ProfileMemory:
             "relations": {},
             "projects": [],
             "preferences": {},
-            "emotion_patterns": {}
+            "emotion_patterns": {},
+            "behavior_metrics": {}
         }
 
         if not PROFILE_PATH.exists():
@@ -184,6 +185,17 @@ class ProfileMemory:
 
 
     # ---------------- SETTERS / GETTERS ----------------
+    def bump_metric(self, key: str, inc: int = 1):
+        metrics = self.data.setdefault("behavior_metrics", {})
+        metrics[key] = int(metrics.get(key, 0)) + int(inc)
+        self.save()
+
+    def set_last_mode(self, mode: str):
+        metrics = self.data.setdefault("behavior_metrics", {})
+        metrics["last_mode"] = (mode or "").lower().strip()
+        metrics["last_mode_ts"] = _now()
+        self.save()
+
 
     def set_name(self, name: str):
         name = (name or "").strip()

@@ -9,6 +9,7 @@ from max_assistant_v2.utils.logger import get_logger
 from max_assistant_v2.memory.profile import ProfileMemory
 from max_assistant_v2.core.project_manager import ProjectManager
 from max_assistant_v2.tools.memory_dashboard_tool import open_memory_dashboard
+from max_assistant_v2.core.behavior_analyzer import BehaviorAnalyzer
 
 log = get_logger(__name__)
 
@@ -18,6 +19,7 @@ class Router:
         self.llm = llm
         self.planner = PlannerAgent(llm)
         self.profile = ProfileMemory()
+        self.behavior = BehaviorAnalyzer(self.profile)
         self.profile.cleanup()
         self.tool_registry = ToolRegistry()
         self.sys = SystemTools(self.tool_registry)
@@ -127,6 +129,34 @@ Phrase :
 
         low = txt.lower()
 
+        # =========================
+        # 0) Analyse comportementale (déterministe)
+        # =========================
+        beh = self.behavior.analyze(txt, last_error=None)
+
+        if state_cb:
+            state_cb(beh.mode, 0.7)
+
+        # On pousse dans la mémoire émotionnelle existante
+        if beh.emotion:
+            self.profile.set_emotion(beh.emotion, beh.intensity)
+            self.profile.update_emotion_pattern(txt, beh.emotion)
+
+        # =========================
+        # Metrics comportementales durables
+        # =========================
+        if beh.mode:
+            self.profile.set_last_mode(beh.mode)
+
+        if beh.emotion == "frustré":
+            self.profile.bump_metric("frustration_hits", 1)
+        if beh.emotion == "stressé":
+            self.profile.bump_metric("urgent_hits", 1)
+        if len(txt) >= 180:
+            self.profile.bump_metric("long_messages", 1)    
+
+        
+                
         ut = low
 
         if re.search(r"\b(crée|creer|créer|créer un|creer un|crée un)\b.*\bprojet\b", user_text.lower()):
@@ -168,7 +198,7 @@ Phrase :
                 )
                 return f"Projet ajouté : {p['title']}"
             except Exception as e:
-                return f"❌ Erreur : {e}"
+                return f"Erreur : {e}"
 
         # ACTIVER PROJET
         if re.search(r"\b(active|travaille)\b.*\bprojet\b", ut):
@@ -205,7 +235,7 @@ Phrase :
                     desc = user_text.split(p["title"], 1)[1].strip()
 
                     self.projects.update_project(p["id"], "description", desc)
-                    return f"✏️ Description mise à jour pour {p['title']}"
+                    return f"Description mise à jour pour {p['title']}"
 
             return "Projet introuvable pour modification."
 
@@ -225,7 +255,7 @@ Phrase :
                     new_theme = parts[1].strip()
 
                     self.projects.update_project(p["id"], "theme", new_theme)
-                    return f"🎨 Thème mis à jour pour {p['title']}"
+                    return f"Thème mis à jour pour {p['title']}"
 
             return "Projet introuvable."
 
@@ -383,9 +413,9 @@ Phrase :
         # -------------------------
         try:
             plan = self.planner.plan(user_text=txt, context=context, retrieved=retrieved)
+            print("🧠 PLAN:", plan)
         except Exception as e:
-            if state_cb:
-                state_cb("erreur", 1.0)
+            
             log.error(f"Planner JSON error: {e}")
             return self.llm.chat(user_text=txt, context=context, retrieved=retrieved)
 
@@ -397,8 +427,7 @@ Phrase :
         # Tools
         if ptype == "tool":
 
-            if state_cb:
-                state_cb("focus", 0.8)
+            
 
             result = self.tool_registry.execute(
                 tool,
@@ -442,6 +471,16 @@ Phrase :
         max_tokens = 400
 
         emotion_value, intensity = self.profile.get_emotion()
+
+        # =========================
+        # Override soft via BehaviorAnalyzer
+        # (si son intensité est forte, on priorise)
+        # =========================
+        if beh and (beh.intensity >= 0.65):
+            temperature = beh.policy.get("temperature", temperature)
+            top_p = beh.policy.get("top_p", top_p)
+            max_tokens = beh.policy.get("max_tokens", max_tokens)
+
 
         # Normalisation robuste
         if emotion_value:
@@ -495,8 +534,9 @@ Phrase :
             max_tokens = int(max_tokens * 1.4)
             temperature = max(temperature, 0.5)
 
+   
         if state_cb:
-            state_cb("reflexion", 0.6)    
+            state_cb("calme", 0.3)
         
         if ptype == "answer":
             if final:

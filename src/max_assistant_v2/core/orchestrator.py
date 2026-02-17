@@ -136,8 +136,7 @@ class Orchestrator:
             response = self.router.handle(
                 user_text=text,
                 context=context,
-                retrieved=retrieved,
-                state_cb=self.console_hud.set_state
+                retrieved=retrieved
             )
 
             # Enregistrer émotion USER détectée
