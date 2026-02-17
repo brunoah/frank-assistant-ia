@@ -15,6 +15,7 @@ venv/
 # Environment
 .env
 data/.env
+data/generated_images/
 
 # Data dynamic
 data/*.json

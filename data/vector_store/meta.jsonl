@@ -41,3 +41,4 @@
 {"text": "Nom de mon clôtrain : Miérable capot", "metadata": {"role": "memory", "ts": "2026-02-17T13:32:47.246840+00:00", "confidence": 1.0, "tags": ["identity"], "kind": "fact"}}
 {"text": "Mode surveillance extérieure lancé.", "metadata": {"role": "memory", "ts": "2026-02-17T14:03:12.626347+00:00", "confidence": 1.0, "tags": ["project"], "kind": "fact"}}
 {"text": "Surveillance extérieure.", "metadata": {"role": "memory", "ts": "2026-02-17T14:04:21.632653+00:00", "confidence": 1.0, "tags": ["preference"], "kind": "fact"}}
+{"text": "Bonjour est une salutation en français qui signifie 'bonne journée' ou 'bon matin'. Apple a développé Bonjour, un protocole de réseau sans configuration pour la découverte, publication et résolution des services réseau.", "metadata": {"role": "memory", "ts": "2026-02-17T15:02:20.188139+00:00", "confidence": 1.0, "tags": ["other"], "kind": "fact"}}

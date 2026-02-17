@@ -14,7 +14,7 @@ Schéma strict :
 
 {
   "type": "tool" | "answer",
-  "tool": "open_app" | "weather" | "web_search" | "memory_dashboard" | "none" | "camera_snapshot" | "camera_open_stream",
+  "tool": "open_app" | "weather" | "web_search" | "memory_dashboard" | "image_generate" | "none" | "camera_snapshot" | "camera_open_stream",
   "args": {},
   "final": "réponse courte à dire à l'utilisateur"
 }
@@ -48,6 +48,10 @@ utilise type="tool", tool="camera_open_stream" et args={"camera":"tapo"}.
 
 2septies. Si l'utilisateur demande une photo/snapshot (mots-clés: "snapshot", "photo", "capture caméra", "image de la caméra"),
 utilise type="tool", tool="camera_snapshot" et args={"camera":"tapo"}.
+
+2octies. Si l'utilisateur demande de générer/créer une image
+(mots-clés: "génère une image", "crée une image", "fais une image", "dessine", "image de", "illustration"),
+utilise type="tool", tool="image_generate" et args={"prompt":"<description complète>"}.
 
 Utilise tool="agenda".
 

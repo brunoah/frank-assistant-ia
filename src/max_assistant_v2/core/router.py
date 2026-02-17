@@ -12,6 +12,7 @@ from max_assistant_v2.core.project_manager import ProjectManager
 from max_assistant_v2.tools.memory_dashboard_tool import open_memory_dashboard
 from max_assistant_v2.core.behavior_analyzer import BehaviorAnalyzer
 from max_assistant_v2.tools.camera_tools import CameraTools
+from max_assistant_v2.tools.image_tools import ImageTools
 
 log = get_logger(__name__)
 
@@ -27,6 +28,7 @@ class Router:
         self.sys = SystemTools(self.tool_registry)
         self.web = WebTools()
         self.camera = CameraTools(self.tool_registry)
+        self.image = ImageTools(self.tool_registry)
 
         # Enregistrement des tools dans le registry
         self.tool_registry.register("web_search", self.web.web_search)
