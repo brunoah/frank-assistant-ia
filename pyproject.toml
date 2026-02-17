@@ -3,8 +3,8 @@ requires = ["setuptools>=68.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "max-assistant-v2"
-version = "0.1.0"
+name = "frank-assistant-ia"
+version = "0.2.0"
 description = "FRANK Assistant - Assistant IA vocal local modulaire avec orchestration, tools, HUD animé et RAG local."
 authors = [
     { name = "Bruno Ahée" }
@@ -28,8 +28,8 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/brunoah/max_assistant_v2"
-Repository = "https://github.com/brunoah/max_assistant_v2"
+Homepage = "https://github.com/brunoah/frank-assistant-ia"
+Repository = "https://github.com/brunoah/frank-assistant-ia"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
