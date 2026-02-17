@@ -67,3 +67,11 @@
 {"ts": "2026-02-17T06:54:54.128004", "user": "Ouvre le dashboard mémoire.", "assistant": "Dashboard mémoire ouvert."}
 {"ts": "2026-02-17T07:10:37.886767", "user": "météo de Paris", "assistant": "Impossible de récupérer la météo pour Paris."}
 {"ts": "2026-02-17T07:13:08.144631", "user": "Météo de Paris", "assistant": "À Paris, il fait 6 degrés, nuageux. Ressenti 3 degrés. Vent 17 kilomètres heure."}
+{"ts": "2026-02-17T07:32:04.783120", "user": "ajoute un rendez-vous demain à 10h", "assistant": "Événement ajouté : Rendez-vous le 2023-10-19 à None"}
+{"ts": "2026-02-17T07:35:37.473856", "user": "Ajoute à rendez-vous demain dix heures.", "assistant": "Erreur lors de l'exécution de agenda: Expecting value: line 1 column 1 (char 0)"}
+{"ts": "2026-02-17T07:36:57.078401", "user": "Ajoute à rendez-vous demain à 10h.", "assistant": "Événement ajouté : Rendez-vous le 2023-10-19 à 10:00"}
+{"ts": "2026-02-17T07:39:30.643847", "user": "liste-moi mes rendez-vous", "assistant": "2023-10-19 10:00 - Rendez-vous"}
+{"ts": "2026-02-17T07:39:58.455300", "user": "Ajoute-moi, rendez-vous demain à 11h chez le dentiste.", "assistant": "Événement ajouté : Rendez-vous chez le dentiste le 2023-10-20 à 11:00"}
+{"ts": "2026-02-17T07:40:17.512473", "user": "Sous-titres réalisés par la communauté d'Amara.org", "assistant": "Les sous-titres ont été réalisés par la communauté d'Amara.org."}
+{"ts": "2026-02-17T07:40:36.000406", "user": "Suprime le rendez-vous demain chez le dentiste.", "assistant": "Événement supprimé : Rendez-vous chez le dentiste"}
+{"ts": "2026-02-17T07:41:02.036744", "user": "Suprime le rendez-vous, rendez-vous.", "assistant": "Événement supprimé : Rendez-vous"}

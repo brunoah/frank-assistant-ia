@@ -1,12 +1,15 @@
 import json
 from pathlib import Path
 from typing import Dict, Callable
-
+from max_assistant_v2.core.agenda_manager import AgendaManager
 
 class ToolRegistry:
     def __init__(self):
         self.tools: Dict[str, Callable] = {}
         self.apps = self._load_apps()
+
+        self.agenda = AgendaManager()
+        self.register("agenda", self._agenda_tool)
 
     def _load_apps(self):
         # remonte jusqu'à la racine du projet
@@ -38,3 +41,19 @@ class ToolRegistry:
 
     def list_apps(self):
         return list(self.apps.keys())
+
+    def _agenda_tool(self, action=None, title=None, date=None, time=None, **kwargs):
+
+        if action == "add":
+            if not time:
+                time = "09:00"
+
+            return self.agenda.add_event(title, date, time)
+
+        if action == "list":
+            return self.agenda.list_events()
+
+        if action == "delete":
+            return self.agenda.delete_event(title)
+
+        return "Action agenda inconnue."

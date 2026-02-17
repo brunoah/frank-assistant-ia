@@ -19,3 +19,6 @@
 {"text": "Les sous-titres peuvent être un excellent moyen de rendre les vidéos accessibles à une audience plus large.", "metadata": {"role": "memory", "ts": "2026-02-17T06:52:17.655834+00:00", "confidence": 0.9, "tags": ["other"], "kind": "fact"}}
 {"text": "Je m'appelle Bruno", "metadata": {"role": "memory", "ts": "2026-02-17T06:52:37.001231+00:00", "confidence": 1.0, "tags": ["identity"], "kind": "fact"}}
 {"text": "Ouvre le dashboard mémoire.", "metadata": {"role": "memory", "ts": "2026-02-17T06:54:54.128004+00:00", "confidence": 0.9, "tags": ["other"], "kind": "fact"}}
+{"text": "Rendez-vous le 2023-10-19 à None", "metadata": {"role": "memory", "ts": "2026-02-17T07:32:04.783120+00:00", "confidence": 1.0, "tags": ["project"], "kind": "fact"}}
+{"text": "Rendez-vous le 2023-10-19 à 10:00", "metadata": {"role": "memory", "ts": "2026-02-17T07:36:57.079399+00:00", "confidence": 1.0, "tags": ["project"], "kind": "fact"}}
+{"text": "Rendez-vous chez le dentiste le 2023-10-20 à 11:00", "metadata": {"role": "memory", "ts": "2026-02-17T07:39:58.455300+00:00", "confidence": 1.0, "tags": ["project"], "kind": "fact"}}
