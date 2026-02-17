@@ -142,7 +142,7 @@ MIT License --- voir LICENSE.txt
 
 ## 👤 Auteur
 
-Bruno Ahée\
+Bruno Ahée
 
 🔗 LinkedIn : https://www.linkedin.com/in/bruno-ah%C3%A9e-a8451a313/
 
