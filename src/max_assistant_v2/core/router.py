@@ -13,6 +13,7 @@ from max_assistant_v2.tools.memory_dashboard_tool import open_memory_dashboard
 from max_assistant_v2.core.behavior_analyzer import BehaviorAnalyzer
 from max_assistant_v2.tools.camera_tools import CameraTools
 from max_assistant_v2.tools.image_tools import ImageTools
+from max_assistant_v2.config.identity import FRANK_IDENTITY
 
 log = get_logger(__name__)
 
@@ -141,6 +142,26 @@ Phrase :
         return {"type": "none", "key": "", "value": ""}
 
     def handle(self, user_text: str, context: str, retrieved: list[str], state_cb=None) -> str:
+        
+        # ==============================
+        # IDENTITÉ OFFICIELLE FRANK
+        # ==============================
+
+        identity_triggers = [
+            "qui es tu",
+            "qui es-tu",
+            "c'est quoi frank",
+            "qu'est ce que frank",
+            "qui t'a créé",
+            "qui ta créé",
+            "quelle est ta définition",
+            "présente toi",
+            "présente-toi"
+        ]
+
+        if any(trigger in user_text.lower() for trigger in identity_triggers):
+            return FRANK_IDENTITY
+
         txt = (user_text or "").strip()
 
         low = txt.lower()
@@ -150,7 +171,6 @@ Phrase :
         # =========================
         beh = self.behavior.analyze(txt, last_error=None)
       
-        # 🔥 METTRE ICI
         if beh.emotion == "frustré":
             self.profile.bump_metric("frustration_hits", 1)
 
