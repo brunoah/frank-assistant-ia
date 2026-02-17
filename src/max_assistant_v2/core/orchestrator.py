@@ -90,7 +90,7 @@ class Orchestrator:
                 continue
 
             # Stop phrase simple (tu pourras enrichir)
-            if text.strip().lower() in {"quit frank", "stop frank", "au revoir frank", "frank quitte"}:
+            if text.strip().lower() in {"frank quit", "frank stop", "au revoir frank", "frank quitte"}:
                 self.tts.say("🔴 D'accord. Je m'arrête.")
                 break
 

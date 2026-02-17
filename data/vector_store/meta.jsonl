@@ -42,3 +42,8 @@
 {"text": "Mode surveillance extérieure lancé.", "metadata": {"role": "memory", "ts": "2026-02-17T14:03:12.626347+00:00", "confidence": 1.0, "tags": ["project"], "kind": "fact"}}
 {"text": "Surveillance extérieure.", "metadata": {"role": "memory", "ts": "2026-02-17T14:04:21.632653+00:00", "confidence": 1.0, "tags": ["preference"], "kind": "fact"}}
 {"text": "Bonjour est une salutation en français qui signifie 'bonne journée' ou 'bon matin'. Apple a développé Bonjour, un protocole de réseau sans configuration pour la découverte, publication et résolution des services réseau.", "metadata": {"role": "memory", "ts": "2026-02-17T15:02:20.188139+00:00", "confidence": 1.0, "tags": ["other"], "kind": "fact"}}
+{"text": "Prends un screenshot.", "metadata": {"role": "memory", "ts": "2026-02-17T15:21:49.987217+00:00", "confidence": 1.0, "tags": ["project"], "kind": "fact"}}
+{"text": "Surveillance extérieure activée.", "metadata": {"role": "memory", "ts": "2026-02-17T15:23:17.923250+00:00", "confidence": 1.0, "tags": ["preference"], "kind": "fact"}}
+{"text": "Un événement de petit déjeuner a été ajouté pour le 2026-02-17 à 09:00.", "metadata": {"role": "memory", "ts": "2026-02-17T15:27:17.690599+00:00", "confidence": 1.0, "tags": ["project"], "kind": "fact"}}
+{"text": "Ouvre les services Windows.", "metadata": {"role": "memory", "ts": "2026-02-17T15:36:54.397761+00:00", "confidence": 1.0, "tags": ["project"], "kind": "fact"}}
+{"text": "Ouvre ce petit farid ! Mou touti ! Il y a un truc ? Franck !", "metadata": {"role": "memory", "ts": "2026-02-17T15:43:16.052113+00:00", "confidence": 1.0, "tags": ["other"], "kind": "fact"}}

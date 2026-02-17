@@ -30,6 +30,12 @@ RÈGLES IMPORTANTES :
 
 2. N'utilise "open_app" QUE si une application est explicitement mentionnée.
 
+IMPORTANT :
+Toujours utiliser :
+args={"app_name":"nom_exact"}
+
+Ne jamais utiliser "app".
+
 2bis. Si l'utilisateur demande explicitement une recherche internet ("cherche sur le web", "recherche web", "google", "sur internet"),
 utilise type="tool", tool="web_search" et args={"query":"..."}.
 
