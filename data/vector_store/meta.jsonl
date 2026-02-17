@@ -32,3 +32,9 @@
 {"text": "Liste-moi, mais rendez-vous.", "metadata": {"role": "memory", "ts": "2026-02-17T07:55:53.276262+00:00", "confidence": 1.0, "tags": ["project"], "kind": "fact"}}
 {"text": "Liste à moi mais rendez-vous", "metadata": {"role": "memory", "ts": "2026-02-17T08:00:22.812799+00:00", "confidence": 1.0, "tags": ["project"], "kind": "fact"}}
 {"text": "Liste à moi mais rendez-vous", "metadata": {"role": "memory", "ts": "2026-02-17T08:02:35.871919+00:00", "confidence": 1.0, "tags": ["project"], "kind": "fact"}}
+{"text": "Rendez-vous d'Antis à 9h09 aujourd'hui", "metadata": {"role": "memory", "ts": "2026-02-17T08:07:15.339003+00:00", "confidence": 1.0, "tags": ["project"], "kind": "fact"}}
+{"text": "Rendez-vous à la maison tous les jours", "metadata": {"role": "memory", "ts": "2026-02-17T08:07:31.236916+00:00", "confidence": 0.9, "tags": ["preference"], "kind": "fact"}}
+{"text": "Rendez-vous aujourd'hui à 9h16 avec Antiste", "metadata": {"role": "memory", "ts": "2026-02-17T08:14:55.590959+00:00", "confidence": 0.9, "tags": ["project"], "kind": "fact"}}
+{"text": "Rendez-vous d'antiste aujourd'hui à 9h16", "metadata": {"role": "memory", "ts": "2026-02-17T08:15:14.746714+00:00", "confidence": 1.0, "tags": ["project"], "kind": "fact"}}
+{"text": "Les sous-titres ont été réalisés par la communauté d'Amara.org.", "metadata": {"role": "memory", "ts": "2026-02-17T08:16:28.778616+00:00", "confidence": 1.0, "tags": ["other"], "kind": "fact"}}
+{"text": "Rendez-vous : Mardi 17 février 2026 - Antiste à 09:09 et 09:16 ; Mercredi 18 février 2026 - anti à 15:00 ; Vendredi 20 février 2026 - anti à 10:00 ; Samedi 21 février 2026 - marrario à 08:00", "metadata": {"role": "memory", "ts": "2026-02-17T08:17:47.741895+00:00", "confidence": 1.0, "tags": ["other"], "kind": "fact"}}
