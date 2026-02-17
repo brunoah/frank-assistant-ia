@@ -143,6 +143,7 @@ MIT License --- voir LICENSE.txt
 ## 👤 Auteur
 
 Bruno Ahée\
+🔗 LinkedIn : https://www.linkedin.com/in/ton-profil  
 Projet initié en 2026
 
 ------------------------------------------------------------------------
