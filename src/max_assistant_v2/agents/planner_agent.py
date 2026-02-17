@@ -14,7 +14,7 @@ Schéma strict :
 
 {
   "type": "tool" | "answer",
-  "tool": "open_app" | "weather" | "web_search" | "memory_dashboard" | "none",
+  "tool": "open_app" | "weather" | "web_search" | "memory_dashboard" | "none" | "camera_snapshot" | "camera_open_stream",
   "args": {},
   "final": "réponse courte à dire à l'utilisateur"
 }
@@ -42,6 +42,12 @@ Si aucune ville n'est donnée, mets "Paris".
 utilise type="tool", tool="memory_dashboard" et args={}.
 
 2quinquies. Si l'utilisateur parle de rendez-vous, planning, agenda, réunion, événement :
+
+2sexies. Si l'utilisateur demande la caméra (mots-clés: "caméra", "camera", "tapo", "flux", "stream", "montre la caméra"),
+utilise type="tool", tool="camera_open_stream" et args={"camera":"tapo"}.
+
+2septies. Si l'utilisateur demande une photo/snapshot (mots-clés: "snapshot", "photo", "capture caméra", "image de la caméra"),
+utilise type="tool", tool="camera_snapshot" et args={"camera":"tapo"}.
 
 Utilise tool="agenda".
 
@@ -71,6 +77,22 @@ tu dois retourner UNIQUEMENT un JSON brut.
 Aucun texte avant ou après.
 
 Réponds uniquement en JSON valide.
+
+Si l'utilisateur dit "surveillance extérieure",
+retourne :
+{
+  "type": "tool",
+  "tool": "camera_open_stream",
+  "args": {"camera": "exterieure"}
+}
+
+Si l'utilisateur dit "surveillance intérieure",
+retourne :
+{
+  "type": "tool",
+  "tool": "camera_open_stream",
+  "args": {"camera": "interieure"}
+}
 """
 
 

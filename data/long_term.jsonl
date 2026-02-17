@@ -98,3 +98,19 @@
 {"ts": "2026-02-17T08:15:14.746714", "user": "Ajoutes rendez-vous d'antiste aujourd'hui à 9h16.", "assistant": "Événement ajouté : Antiste le 2026-02-17 à 09:16"}
 {"ts": "2026-02-17T08:16:28.778616", "user": "Sous-titres réalisés par la communauté d'Amara.org", "assistant": "Les sous-titres ont été réalisés par la communauté d'Amara.org."}
 {"ts": "2026-02-17T08:17:47.741895", "user": "Liste-moi mes rendez-vous.", "assistant": "Mardi 17 février 2026\n   • 09:09 — Antiste\n   • 09:16 — Antiste\n\n Mercredi 18 février 2026\n   • 15:00 — anti\n\n Vendredi 20 février 2026\n   • 10:00 — anti\n\n Samedi 21 février 2026\n   • 08:00 — marrario"}
+{"ts": "2026-02-17T13:32:47.246840", "user": "mon clôtrain miérable capot", "assistant": "Je retiens que ton/ta clôtrain s'appelle Miérable capot."}
+{"ts": "2026-02-17T13:33:10.464417", "user": "montre la caméra tapeau", "assistant": "Erreur lors de l'exécution de camera_open_stream: Variable d'environnement TAPO_RTSP_URL manquante dans .env"}
+{"ts": "2026-02-17T13:35:40.944643", "user": "Ouvre la caméra à ta peau.", "assistant": "Ouverture du flux caméra (ffplay)."}
+{"ts": "2026-02-17T13:36:10.940804", "user": "Recherche sur le web le jeu vidéo Mario.", "assistant": "Aucun résultat pour : sur le web le jeu vidéo Mario."}
+{"ts": "2026-02-17T13:36:43.290182", "user": "Recherche sur le web le jeu vidéo Mario.", "assistant": "Aucun résultat pour : sur le web le jeu vidéo Mario."}
+{"ts": "2026-02-17T13:37:00.601486", "user": "Recherche sur Internet le nom du président des États-Unis.", "assistant": "Aucun résultat pour : sur Internet le nom du président des États-Unis."}
+{"ts": "2026-02-17T13:38:11.947422", "user": "Quelle est la mérito à Paris ?", "assistant": "Dashboard mémoire ouvert."}
+{"ts": "2026-02-17T13:38:33.114635", "user": "Quelle est la VTO à Paris ?", "assistant": "Dashboard mémoire ouvert."}
+{"ts": "2026-02-17T13:38:47.551348", "user": "Quelle est la météo à Paris ?", "assistant": "À Paris, il fait 9 degrés, ciel dégagé. Ressenti 6 degrés. Vent 20 kilomètres heure."}
+{"ts": "2026-02-17T13:39:08.548791", "user": "Ouvre la caméra, tape-au.", "assistant": "Ouverture du flux caméra (ffplay)."}
+{"ts": "2026-02-17T13:52:01.098897", "user": "Montre-moi la caméra.", "assistant": "La caméra tapo est maintenant visible."}
+{"ts": "2026-02-17T13:54:47.258753", "user": "Ouvre la caméra", "assistant": "Flux caméra tapo ouvert."}
+{"ts": "2026-02-17T13:55:16.727534", "user": "Ouvre la caméra.", "assistant": "La caméra tapo est maintenant visible."}
+{"ts": "2026-02-17T13:57:44.357627", "user": "Ouvre la caméra.", "assistant": "Connexion à la caméra tapo établie."}
+{"ts": "2026-02-17T14:03:12.624872", "user": "Surveillance extérieure", "assistant": "Mode surveillance exterieure lancé."}
+{"ts": "2026-02-17T14:04:21.631650", "user": "Surveillance extérieure.", "assistant": "Caméra exterieure en surveillance."}

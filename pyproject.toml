@@ -17,6 +17,7 @@ dependencies = [
     "python-dotenv",
     "requests",
     "pydantic",
+    "opencv-python",
 ]
 
 [project.optional-dependencies]

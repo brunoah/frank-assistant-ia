@@ -1,5 +1,6 @@
 import json
 import re
+import random
 
 from max_assistant_v2.agents.planner_agent import PlannerAgent
 from max_assistant_v2.tools.tool_registry import ToolRegistry
@@ -10,6 +11,7 @@ from max_assistant_v2.memory.profile import ProfileMemory
 from max_assistant_v2.core.project_manager import ProjectManager
 from max_assistant_v2.tools.memory_dashboard_tool import open_memory_dashboard
 from max_assistant_v2.core.behavior_analyzer import BehaviorAnalyzer
+from max_assistant_v2.tools.camera_tools import CameraTools
 
 log = get_logger(__name__)
 
@@ -24,6 +26,7 @@ class Router:
         self.tool_registry = ToolRegistry()
         self.sys = SystemTools(self.tool_registry)
         self.web = WebTools()
+        self.camera = CameraTools(self.tool_registry)
 
         # Enregistrement des tools dans le registry
         self.tool_registry.register("web_search", self.web.web_search)
@@ -445,21 +448,71 @@ Phrase :
         args = plan.get("args") or {}
         final = (plan.get("final") or "").strip()
 
+        # =========================
+        # 4) Planner / Tools / Answer
+        # =========================
+
         # Tools
         if ptype == "tool":
 
-            
-
+            # 🔹 Cas spécial agenda
             if tool == "agenda":
                 args["raw_text"] = user_text
 
+            # 🔹 Exécution du tool (IMPORTANT : toujours avant toute logique)
             result = self.tool_registry.execute(tool, **args)
 
-            # 🔹 Screenshot → réponse directe (pas de LLM)
+            # =====================================
+            # 🔥 CAS SPECIAL CAMERA (Premium)
+            # =====================================
+            if tool in ["camera_snapshot", "camera_open_stream"]:
+
+                if isinstance(result, dict):
+
+                    if result.get("status") == "success":
+
+                        if result.get("type") == "snapshot":
+
+                            phrases_snapshot = [
+                                f"Snapshot enregistré pour la caméra {result.get('camera')}.",
+                                "Image capturée.",
+                                "Photo prise.",
+                                "Capture effectuée."
+                            ]
+
+                            return random.choice(phrases_snapshot)
+
+                        if result.get("type") == "stream":
+
+                            phrases_stream = [
+                                f"Surveillance {result.get('camera')} activée.",
+                                f"Caméra {result.get('camera')} en surveillance.",
+                                f"Mode surveillance {result.get('camera')} lancé."
+                            ]
+
+                            return random.choice(phrases_stream)
+
+                    else:
+                        phrases_error = [
+                            "Je n'arrive pas à accéder à la caméra.",
+                            "Problème d'accès caméra.",
+                            "La caméra ne répond pas.",
+                            f"Erreur caméra : {result.get('message')}"
+                        ]
+
+                        return random.choice(phrases_error)
+
+                return "Caméra exécutée."
+
+            # =====================================
+            # Screenshot → réponse directe
+            # =====================================
             if tool == "screenshot":
                 return result
 
-            # 🔹 Web search → synthèse
+            # =====================================
+            # Web search → synthèse LLM
+            # =====================================
             if tool == "web_search":
                 return self.llm.chat(
                     f"""
@@ -482,8 +535,25 @@ Phrase :
                     top_p=0.8
                 )
 
-            # 🔹 Par défaut → retourne résultat brut
-            return result
+            # =====================================
+            # Par défaut → synthèse simple
+            # =====================================
+            return self.llm.chat(
+                f"""
+        Tu es FRANK, assistant technique.
+
+        Voici des informations récupérées via un outil :
+
+        {result}
+
+        Synthétise clairement.
+        """,
+                context="",
+                retrieved=[],
+                temperature=0.4,
+                max_tokens=600,
+                top_p=0.8
+            )
 
         # Answer
 
