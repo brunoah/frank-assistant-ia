@@ -75,3 +75,19 @@
 {"ts": "2026-02-17T07:40:17.512473", "user": "Sous-titres réalisés par la communauté d'Amara.org", "assistant": "Les sous-titres ont été réalisés par la communauté d'Amara.org."}
 {"ts": "2026-02-17T07:40:36.000406", "user": "Suprime le rendez-vous demain chez le dentiste.", "assistant": "Événement supprimé : Rendez-vous chez le dentiste"}
 {"ts": "2026-02-17T07:41:02.036744", "user": "Suprime le rendez-vous, rendez-vous.", "assistant": "Événement supprimé : Rendez-vous"}
+{"ts": "2026-02-17T07:44:06.765998", "user": "ajoute une réunion vendredi à 15h", "assistant": "Événement ajouté : Réunion le 2023-10-27 à 09:00"}
+{"ts": "2026-02-17T07:44:32.249782", "user": "Je suis stress aujourd'hui.", "assistant": "Je comprends comment tu te sens."}
+{"ts": "2026-02-17T07:44:48.569450", "user": "Ajoute une réunion aujourd'hui à 10h.", "assistant": "Événement ajouté : Réunion le 2023-10-18 à 10:00"}
+{"ts": "2026-02-17T07:46:29.963136", "user": "ajoute un dentiste vendredi à 15h.", "assistant": "Événement ajouté : dentiste le 2023-10-27 à 15:00"}
+{"ts": "2026-02-17T07:46:52.395896", "user": "Franck ajoute sur une réunion de main à 10h00.", "assistant": "Événement ajouté : réunion le 2023-10-18 à 10:00"}
+{"ts": "2026-02-17T07:51:42.102447", "user": "Ajoute un rendez-vous d'anti du vendredi à 10h.", "assistant": "Événement ajouté : anti le 2026-02-20 à 10:00"}
+{"ts": "2026-02-17T07:52:04.967907", "user": "Ajoute un rendez-vous demain d'anti, c'est à 15h.", "assistant": "Événement ajouté : anti le 2026-02-18 à 15:00"}
+{"ts": "2026-02-17T07:52:42.541670", "user": "Ajoutons rendez-vous marrario samedi à 8h00", "assistant": "Événement ajouté : marrario le 2026-02-21 à 08:00"}
+{"ts": "2026-02-17T07:53:09.439973", "user": "Listez-moi mais rendez-vous.", "assistant": "Action agenda inconnue."}
+{"ts": "2026-02-17T07:53:26.306768", "user": "Liste-moi mes rendez-vous.", "assistant": "Action agenda inconnue."}
+{"ts": "2026-02-17T07:55:53.276262", "user": "Liste-moi, mais rendez-vous.", "assistant": "2026-02-20 10:00 - anti\n2026-02-18 15:00 - anti\n2026-02-21 08:00 - marrario"}
+{"ts": "2026-02-17T07:58:38.167628", "user": "Liste-moi mais rendez-vous.", "assistant": "📅 Mercredi 18 fã©vrier 2026\n   • 15:00 — anti\n\n📅 Vendredi 20 fã©vrier 2026\n   • 10:00 — anti\n\n📅 Samedi 21 fã©vrier 2026\n   • 08:00 — marrario"}
+{"ts": "2026-02-17T08:00:22.812799", "user": "Liste à moi mais rendez-vous", "assistant": "Mercredi 18 fã©vrier 2026\n   • 15:00 — anti\n\n Vendredi 20 fã©vrier 2026\n   • 10:00 — anti\n\n Samedi 21 fã©vrier 2026\n   • 08:00 — marrario"}
+{"ts": "2026-02-17T08:01:21.128081", "user": "Listez-moi mes rendez-vous.", "assistant": "Mercredi 18 fã©vrier 2026\n   • 15:00 — anti\n\n Vendredi 20 fã©vrier 2026\n   • 10:00 — anti\n\n Samedi 21 fã©vrier 2026\n   • 08:00 — marrario"}
+{"ts": "2026-02-17T08:02:29.231921", "user": "Listez-moi, mais rendez-vous.", "assistant": "Mercredi 18 fã©vrier 2026\n   • 15:00 — anti\n\n Vendredi 20 fã©vrier 2026\n   • 10:00 — anti\n\n Samedi 21 fã©vrier 2026\n   • 08:00 — marrario"}
+{"ts": "2026-02-17T08:02:35.871919", "user": "Liste à moi mais rendez-vous", "assistant": "Mercredi 18 février 2026\n   • 15:00 — anti\n\n Vendredi 20 février 2026\n   • 10:00 — anti\n\n Samedi 21 février 2026\n   • 08:00 — marrario"}

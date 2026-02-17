@@ -42,18 +42,32 @@ class ToolRegistry:
     def list_apps(self):
         return list(self.apps.keys())
 
-    def _agenda_tool(self, action=None, title=None, date=None, time=None, **kwargs):
+    def _agenda_tool(self, action=None, title=None, raw_text=None, **kwargs):
 
+        text = (raw_text or "").lower()
+
+        # 🔎 Détection automatique si action absente
+        if not action:
+            if "liste" in text or "mes rendez" in text or "agenda" in text:
+                action = "list"
+
+            elif "supprime" in text:
+                action = "delete"
+
+            else:
+                action = "add"
+
+        # 🟢 Add
         if action == "add":
-            if not time:
-                time = "09:00"
+            return self.agenda.add_event_from_text(title, raw_text)
 
-            return self.agenda.add_event(title, date, time)
-
+        # 📅 List
         if action == "list":
             return self.agenda.list_events()
 
+        # ❌ Delete
         if action == "delete":
             return self.agenda.delete_event(title)
 
         return "Action agenda inconnue."
+

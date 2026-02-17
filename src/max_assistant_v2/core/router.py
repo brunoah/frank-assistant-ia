@@ -450,10 +450,10 @@ Phrase :
 
             
 
-            result = self.tool_registry.execute(
-                tool,
-                **args
-            )
+            if tool == "agenda":
+                args["raw_text"] = user_text
+
+            result = self.tool_registry.execute(tool, **args)
 
             # 🔹 Screenshot → réponse directe (pas de LLM)
             if tool == "screenshot":

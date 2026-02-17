@@ -22,3 +22,13 @@
 {"text": "Rendez-vous le 2023-10-19 à None", "metadata": {"role": "memory", "ts": "2026-02-17T07:32:04.783120+00:00", "confidence": 1.0, "tags": ["project"], "kind": "fact"}}
 {"text": "Rendez-vous le 2023-10-19 à 10:00", "metadata": {"role": "memory", "ts": "2026-02-17T07:36:57.079399+00:00", "confidence": 1.0, "tags": ["project"], "kind": "fact"}}
 {"text": "Rendez-vous chez le dentiste le 2023-10-20 à 11:00", "metadata": {"role": "memory", "ts": "2026-02-17T07:39:58.455300+00:00", "confidence": 1.0, "tags": ["project"], "kind": "fact"}}
+{"text": "Ajout d'une réunion vendredi à 15h.", "metadata": {"role": "memory", "ts": "2026-02-17T07:44:06.765998+00:00", "confidence": 1.0, "tags": ["project"], "kind": "fact"}}
+{"text": "Ajout d'une réunion aujourd'hui à 10h.", "metadata": {"role": "memory", "ts": "2026-02-17T07:44:48.570450+00:00", "confidence": 1.0, "tags": ["project"], "kind": "fact"}}
+{"text": "Dentiste le vendredi à 15h", "metadata": {"role": "memory", "ts": "2026-02-17T07:46:29.963136+00:00", "confidence": 1.0, "tags": ["project"], "kind": "fact"}}
+{"text": "Franck ajoute sur une réunion de main à 10h00.", "metadata": {"role": "memory", "ts": "2026-02-17T07:46:52.395896+00:00", "confidence": 1.0, "tags": ["project"], "kind": "fact"}}
+{"text": "Rendez-vous d'anti le vendredi à 10h", "metadata": {"role": "memory", "ts": "2026-02-17T07:51:42.102447+00:00", "confidence": 1.0, "tags": ["project"], "kind": "fact"}}
+{"text": "Rendez-vous d'anti le 2026-02-18 à 15:00", "metadata": {"role": "memory", "ts": "2026-02-17T07:52:04.967907+00:00", "confidence": 0.9, "tags": ["project"], "kind": "fact"}}
+{"text": "marrario le 2026-02-21 à 08:00", "metadata": {"role": "memory", "ts": "2026-02-17T07:52:42.541670+00:00", "confidence": 1.0, "tags": ["project"], "kind": "fact"}}
+{"text": "Liste-moi, mais rendez-vous.", "metadata": {"role": "memory", "ts": "2026-02-17T07:55:53.276262+00:00", "confidence": 1.0, "tags": ["project"], "kind": "fact"}}
+{"text": "Liste à moi mais rendez-vous", "metadata": {"role": "memory", "ts": "2026-02-17T08:00:22.812799+00:00", "confidence": 1.0, "tags": ["project"], "kind": "fact"}}
+{"text": "Liste à moi mais rendez-vous", "metadata": {"role": "memory", "ts": "2026-02-17T08:02:35.871919+00:00", "confidence": 1.0, "tags": ["project"], "kind": "fact"}}

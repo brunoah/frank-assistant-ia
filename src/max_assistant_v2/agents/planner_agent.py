@@ -41,40 +41,24 @@ Si aucune ville n'est donnée, mets "Paris".
 2quater. Si l'utilisateur demande d'afficher la mémoire (mots-clés: "dashboard mémoire", "montre ta mémoire", "affiche la mémoire", "mémoire frank"),
 utilise type="tool", tool="memory_dashboard" et args={}.
 
-2quinquies. Si l'utilisateur parle de rendez-vous, planning, agenda, réunion, événement, planifier, ajouter, supprimer un rendez-vous :
+2quinquies. Si l'utilisateur parle de rendez-vous, planning, agenda, réunion, événement :
 
-Utilise tool="agenda" avec :
+Utilise tool="agenda".
 
 Pour ajouter :
 args={
     "action": "add",
     "title": "<titre court>",
-    "date": "YYYY-MM-DD",
-    "time": "HH:MM"
+    "date": "<expression naturelle EXACTE extraite>",
+    "time": "<heure EXACTE extraite>"
 }
 
-Pour lister :
-args={
-    "action": "list"
-}
-
-Pour supprimer :
-args={
-    "action": "delete",
-    "title": "<titre>"
-}
-
-Si la date est relative ("demain"), convertis-la en format YYYY-MM-DD.
-
-Si l'utilisateur dit "demain", calcule la date à partir de la date actuelle du système.
-
-Si l'utilisateur donne une heure ("10h", "15:30"), convertis-la en format HH:MM.
-Exemple :
-10h → 10:00
-15h30 → 15:30
-
-Ne jamais omettre "time".
-Si absente, mets "09:00".
+IMPORTANT :
+- Ne calcule jamais la date.
+- Ne convertis jamais en format YYYY-MM-DD.
+- Garde les mots exacts comme "demain", "vendredi", "dans 2 jours".
+- Si aucune heure n’est donnée, ne mets rien.
+- Ne jamais inventer une date.
 
 3. Si la commande est ambiguë, type="answer".
 
