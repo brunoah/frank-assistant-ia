@@ -283,6 +283,8 @@ class ProfileMemory:
             "frustr": "frustré",
             "motiv": "motivé",
             "heureu": "heureux",
+            "content": "heureux",
+            "joy": "heureux",
         }
 
         for key, val in NORMALIZED_EMOTIONS.items():

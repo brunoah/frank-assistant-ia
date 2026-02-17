@@ -9,3 +9,10 @@
 {"text": "Profil résumé : Sous-titres réalisés par la communauté d'Amara.org", "metadata": {"role": "memory", "ts": "2026-02-17T05:48:42.333368+00:00", "confidence": 1.0, "tags": ["identity"], "kind": "fact"}}
 {"text": "Profil résumé: USER", "metadata": {"role": "memory", "ts": "2026-02-17T05:49:40.393921+00:00", "confidence": 1.0, "tags": ["identity"], "kind": "fact"}}
 {"text": "Profil résumé: Ouvre le dashboard mémoire.", "metadata": {"role": "memory", "ts": "2026-02-17T05:57:15.017601+00:00", "confidence": 1.0, "tags": ["preference"], "kind": "fact"}}
+{"text": "Un processeur, ou CPU (Central Processing Unit), est la partie centrale et essentielle de votre ordinateur.", "metadata": {"role": "memory", "ts": "2026-02-17T06:28:57.205294+00:00", "confidence": 1.0, "tags": ["other"], "kind": "fact"}}
+{"text": "Un processeur est un composant central dans un ordinateur, chargé de lire les instructions du programme, les interpréter et les exécuter.", "metadata": {"role": "memory", "ts": "2026-02-17T06:30:28.463620+00:00", "confidence": 1.0, "tags": ["other"], "kind": "fact"}}
+{"text": "Ma femme s'appelle Lorie.", "metadata": {"role": "memory", "ts": "2026-02-17T06:39:09.259357+00:00", "confidence": 1.0, "tags": ["identity"], "kind": "fact"}}
+{"text": "ma femme s'appelle l'Ori", "metadata": {"role": "memory", "ts": "2026-02-17T06:39:43.992827+00:00", "confidence": 1.0, "tags": ["identity"], "kind": "fact"}}
+{"text": "Bruno est le nom de l'utilisateur.", "metadata": {"role": "memory", "ts": "2026-02-17T06:41:20.365486+00:00", "confidence": 1.0, "tags": ["identity"], "kind": "fact"}}
+{"text": "Nom de la femme : Laurie", "metadata": {"role": "memory", "ts": "2026-02-17T06:41:49.783209+00:00", "confidence": 1.0, "tags": ["identity"], "kind": "fact"}}
+{"text": "J'ai rencontré Bruno.", "metadata": {"role": "memory", "ts": "2026-02-17T06:43:45.099885+00:00", "confidence": 1.0, "tags": ["identity"], "kind": "fact"}}

@@ -41,7 +41,7 @@ class Router:
             "fatigué": ["épuisé", "crevé", "vidé", "hs"],
             "frustré": ["ça m'énerve", "injuste", "ras le bol"],
             "motivé": ["à fond", "déterminé", "let's go", "objectif"],
-            "heureux": ["génial", "super", "trop content", "incroyable"],
+            "heureux": ["génial", "super", "trop content", "incroyable", "je suis content", "content"],
         }
 
         intensifiers = {
@@ -73,6 +73,17 @@ class Router:
         base_intensity = max(0.2, min(1.0, base_intensity))
 
         return detected_emotion, base_intensity
+
+    def _is_neutral_question(self, txt: str) -> bool:
+        t = (txt or "").strip().lower()
+        if not t:
+            return True
+        if t.endswith("?"):
+            return True
+        # Questions fréquentes sans "?"
+        starters = ("comment ", "pourquoi ", "quand ", "où ", "ou ", "qui ", "quoi ", "quel ", "quelle ")
+        return t.startswith(starters)
+
 
     def extract_personal_info(self, user_text: str):
         prompt = f"""
@@ -145,9 +156,19 @@ Phrase :
             state_cb(beh.mode, 0.7)
 
         # On pousse dans la mémoire émotionnelle existante
+        # ✅ Garde-fous : n'écrase pas l'état user sur des signaux faibles / questions neutres
         if beh.emotion:
-            self.profile.set_emotion(beh.emotion, beh.intensity)
-            self.profile.update_emotion_pattern(txt, beh.emotion)
+            is_question = self._is_neutral_question(txt)
+            intensity = float(getattr(beh, "intensity", 0.0) or 0.0)
+            emo = (beh.emotion or "").strip().lower()
+
+            # 1) Si question neutre -> ne pas changer l'émotion
+            # 2) Si intensité faible -> ne pas changer l'émotion
+            # 3) Cas spécial: "fatigué" faible (ton problème récurrent)
+            if (not is_question) and (intensity >= 0.55) and not (emo == "fatigué" and intensity < 0.70):
+                self.profile.set_emotion(emo, intensity)
+                self.profile.update_emotion_pattern(txt, emo)
+
 
         # =========================
         # Metrics comportementales durables

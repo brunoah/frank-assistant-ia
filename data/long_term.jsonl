@@ -36,3 +36,23 @@
 {"ts": "2026-02-17T05:57:15.016600", "user": "Ouvre le dashboard mémoire.", "assistant": "Dashboard mémoire ouvert."}
 {"ts": "2026-02-17T05:58:26.085630", "user": "Ouvre le dashboard mémoire.", "assistant": "Dashboard mémoire ouvert."}
 {"ts": "2026-02-17T05:59:56.706459", "user": "Ouvre le dashboard, n'est-ce pas ?", "assistant": "Dashboard mémoire ouvert."}
+{"ts": "2026-02-17T06:27:46.926058", "user": "explique-moi un processeur", "assistant": "Un processeur, ou CPU (Central Processing Unit), est la partie centrale et essentielle de votre ordinateur. Il s'agit du cerveau qui exécute les instructions d'un programme informatique. Les processeurs sont classés en plusieurs types, tels que les processeurs x86, ARM ou PowerPC. Chaque type a ses propres caractéristiques et performances. Le processeur est composé de nombreux transistors qui effectuent des opérations arithmétiques et logiques pour exécuter les instructions du programme."}
+{"ts": "2026-02-17T06:28:39.349482", "user": "Je suis content aujourd'hui.", "assistant": "Je comprends comment tu te sens."}
+{"ts": "2026-02-17T06:28:57.205294", "user": "explique-moi un processeur", "assistant": "Un processeur, ou CPU (Central Processing Unit), est la partie centrale et essentielle de votre ordinateur. Il s'agit du cerveau qui exécute les instructions d'un programme informatique. Les processeurs sont classés en plusieurs types, tels que les processeurs x86, ARM ou PowerPC. Chaque type a ses propres caractéristiques et performances. Le processeur est composé de nombreux transistors qui effectuent des opérations arithmétiques et logiques pour exécuter les instructions du programme."}
+{"ts": "2026-02-17T06:29:51.727190", "user": "je suis content aujourd'hui", "assistant": "Je comprends comment tu te sens."}
+{"ts": "2026-02-17T06:30:05.947712", "user": "ouvre le dashboard mémoire", "assistant": "Dashboard mémoire ouvert."}
+{"ts": "2026-02-17T06:30:28.463620", "user": "explique-moi un processeur", "assistant": "Dashboard mémoire ouvert."}
+{"ts": "2026-02-17T06:32:11.375689", "user": "Comment je m'appelle ?", "assistant": "Tu t'appelles Bruno."}
+{"ts": "2026-02-17T06:32:30.444734", "user": "Je suis content aujourd'hui.", "assistant": "Je comprends comment tu te sens."}
+{"ts": "2026-02-17T06:32:40.177467", "user": "Comment je m'appelle ?", "assistant": "Tu t'appelles Bruno."}
+{"ts": "2026-02-17T06:38:36.907842", "user": "je suis content aujourd'hui", "assistant": "Je comprends comment tu te sens."}
+{"ts": "2026-02-17T06:38:56.943451", "user": "Comment s'appelle ma femme ?", "assistant": "Votre femme se nomme Ma femme."}
+{"ts": "2026-02-17T06:39:09.259357", "user": "Ma femme s'appelle Lorie.", "assistant": "D'accord Lorie, je m'en souviendrai."}
+{"ts": "2026-02-17T06:39:29.970758", "user": "Comment s'appelle ma femme ?", "assistant": "Je retiens que ton/ta name s'appelle Ma femme."}
+{"ts": "2026-02-17T06:39:43.992827", "user": "ma femme s'appelle l'Ori", "assistant": "Je retiens que ton/ta relation s'appelle Femme."}
+{"ts": "2026-02-17T06:39:59.625348", "user": "Je suis stressé aujourd'hui.", "assistant": "Je comprends comment tu te sens."}
+{"ts": "2026-02-17T06:41:20.365486", "user": "Je m'appelle Bruno.", "assistant": "D'accord Bruno, je m'en souviendrai."}
+{"ts": "2026-02-17T06:41:34.894486", "user": "Comment je m'appelle ?", "assistant": "Tu t'appelles Bruno."}
+{"ts": "2026-02-17T06:41:49.782207", "user": "ma femme s'appelle Laurie", "assistant": "Je retiens que ton/ta name s'appelle Laurie."}
+{"ts": "2026-02-17T06:42:04.855381", "user": "Franck ?", "assistant": "D'accord Franck, je m'en souviendrai."}
+{"ts": "2026-02-17T06:43:45.099885", "user": "Je m'appelle Bruno.", "assistant": "D'accord Bruno, je m'en souviendrai."}

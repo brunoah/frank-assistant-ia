@@ -183,7 +183,18 @@ class Orchestrator:
             if self.hud:
                 self.hud.show()
 
-            self.tts.say(response, hud=self.hud)
+            # --- Etat utilisateur stocké ---
+            user_emotion, user_intensity = self.router.profile.get_emotion()
+
+            print("🗣️ USER EMOTION:", user_emotion, user_intensity)
+            
+            self.tts.say(
+                response,
+                hud=self.hud,
+                user_emotion=user_emotion,
+                user_intensity=user_intensity
+            )
+
 
             if self.hud:
                 self.hud.hide()
