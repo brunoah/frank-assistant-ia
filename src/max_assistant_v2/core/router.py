@@ -133,6 +133,13 @@ Phrase :
         # 0) Analyse comportementale (déterministe)
         # =========================
         beh = self.behavior.analyze(txt, last_error=None)
+      
+        # 🔥 METTRE ICI
+        if beh.emotion == "frustré":
+            self.profile.bump_metric("frustration_hits", 1)
+
+        if beh.emotion == "stressé":
+            self.profile.bump_metric("urgent_hits", 1)
 
         if state_cb:
             state_cb(beh.mode, 0.7)
@@ -146,14 +153,7 @@ Phrase :
         # Metrics comportementales durables
         # =========================
         if beh.mode:
-            self.profile.set_last_mode(beh.mode)
-
-        if beh.emotion == "frustré":
-            self.profile.bump_metric("frustration_hits", 1)
-        if beh.emotion == "stressé":
-            self.profile.bump_metric("urgent_hits", 1)
-        if len(txt) >= 180:
-            self.profile.bump_metric("long_messages", 1)    
+            self.profile.set_last_mode(beh.mode)  
 
         
                 

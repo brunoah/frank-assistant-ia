@@ -104,6 +104,21 @@ class MemoryDashboardWindow:
 
         ttk.Button(top, text="🔄 Rafraîchir", command=self.refresh).pack(side="right")
 
+        # =============================
+        # Bloc Comportement (haut)
+        # =============================
+        self.behavior_frame = tk.Frame(self.win, bg="#1a1a1a")
+        # self.behavior_frame.pack(fill="x", padx=10, pady=(0, 5))
+        self.behavior_label = tk.Label(
+            self.behavior_frame,
+            text="Frustration hits : 0   |   ⚡ Urgent hits : 0",
+            bg="#1a1a1a",
+            fg="#cccccc",
+            font=("Segoe UI", 10, "bold")
+        )
+        self.behavior_label.pack(anchor="w", padx=10, pady=5)
+
+
         self.nb = ttk.Notebook(self.win)
         self.nb.pack(fill="both", expand=True, padx=10, pady=10)
 
@@ -348,6 +363,18 @@ class MemoryDashboardWindow:
 
     def refresh(self):
         data: Dict[str, Any] = getattr(self.profile, "data", {}) or {}
+
+        # =============================
+        # Mise à jour comportement
+        # =============================
+        behavior_metrics = data.get("behavior_metrics", {})
+        frustration_hits = behavior_metrics.get("frustration_hits", 0)
+        urgent_hits = behavior_metrics.get("urgent_hits", 0)
+
+        if hasattr(self, "behavior_label"):
+            self.behavior_label.config(
+                text=f"Frustration hits : {frustration_hits}   |   ⚡ Urgent hits : {urgent_hits}"
+            )
 
         # Projects (via ProjectManager)
         for i in self.tree_proj.get_children():
