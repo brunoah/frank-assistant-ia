@@ -95,7 +95,16 @@ async def voice_input(
 
     result = assistant.process_text(text)
 
-    return result
+    # Récupération émotion utilisateur détectée
+    user_emotion, user_intensity = assistant.orchestrator.router.profile.get_emotion()
+
+    return {
+        "status": "ok",
+        "response": result.get("response"),
+        "state": result.get("state"),
+        "user_emotion": user_emotion or "neutre",
+        "user_intensity": user_intensity or 0.0
+    }
 
 @app.get("/health")
 def health():

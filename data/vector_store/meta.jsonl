@@ -74,3 +74,10 @@
 {"text": "Caméra extérieure activée", "metadata": {"role": "memory", "ts": "2026-02-18T06:24:47.605416+00:00", "confidence": 1.0, "tags": ["project"], "kind": "fact"}}
 {"text": "Caméra exterieure en surveillance.", "metadata": {"role": "memory", "ts": "2026-02-18T06:27:55.828445+00:00", "confidence": 1.0, "tags": ["project"], "kind": "fact"}}
 {"text": "La vie est un voyage unique et riche en expériences.", "metadata": {"role": "memory", "ts": "2026-02-18T06:28:31.224345+00:00", "confidence": 0.9, "tags": ["preference"], "kind": "fact"}}
+{"text": "Le sens de la vie est un concept philosophique qui se demande ce que nous faisons ici sur Terre et comment vivre une vie significative.", "metadata": {"role": "memory", "ts": "2026-02-18T06:40:53.672268+00:00", "confidence": 0.9, "tags": ["other"], "kind": "fact"}}
+{"text": "Dashboard mémoire trouvé", "metadata": {"role": "memory", "ts": "2026-02-18T06:46:45.662969+00:00", "confidence": 1.0, "tags": ["other"], "kind": "fact"}}
+{"text": "Frank, l'assistant technique, a été chargé de synthétiser des informations sur un dashboard mémoire.", "metadata": {"role": "memory", "ts": "2026-02-18T06:52:43.152627+00:00", "confidence": 1.0, "tags": ["other"], "kind": "fact"}}
+{"text": "Frank, l'assistant technique, a été chargé de synthétiser des informations sur un dashboard mémoire.", "metadata": {"role": "memory", "ts": "2026-02-18T06:52:45.116133+00:00", "confidence": 0.9, "tags": ["other"], "kind": "fact"}}
+{"text": "L'utilisateur a demandé d'ouvrir le dashboard mémoire.", "metadata": {"role": "memory", "ts": "2026-02-18T06:54:05.217307+00:00", "confidence": 1.0, "tags": ["project"], "kind": "fact"}}
+{"text": "Utilisateur a demandé d'ouvrir le dashboard mémoire.", "metadata": {"role": "memory", "ts": "2026-02-18T06:55:34.029451+00:00", "confidence": 1.0, "tags": ["other"], "kind": "fact"}}
+{"text": "Ouvrir le dashboard mémoire", "metadata": {"role": "memory", "ts": "2026-02-18T06:55:35.727321+00:00", "confidence": 1.0, "tags": ["other"], "kind": "fact"}}

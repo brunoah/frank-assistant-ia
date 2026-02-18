@@ -19,10 +19,10 @@ log = get_logger(__name__)
 
 
 class Router:
-    def __init__(self, llm):
+    def __init__(self, llm, profile):
         self.llm = llm
         self.planner = PlannerAgent(llm)
-        self.profile = ProfileMemory()
+        self.profile = profile
         self.behavior = BehaviorAnalyzer(self.profile)
         self.profile.cleanup()
         self.tool_registry = ToolRegistry()

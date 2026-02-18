@@ -38,7 +38,7 @@ class Orchestrator:
         self.system_tools = SystemTools(self.tool_registry)
         self.console_hud = ConsoleStateHUD()
 
-        self.router = Router(llm=self.llm)
+        self.router = Router(llm=self.llm, profile=self.profile)
 
         self.hud = hud 
 
@@ -80,7 +80,7 @@ class Orchestrator:
     
     def process_text(self, text: str) -> str:
 
-        print(f"🌐 INPUT EXTERNE: {text}")
+        #print(f"🌐 INPUT EXTERNE: {text}")
 
         # Etat réflexion
         self.console_hud.set_state("reflexion", 0.6)
@@ -147,7 +147,8 @@ class Orchestrator:
         self.record_user_emotion()
 
         self.console_hud.set_state("calme", 0.3)
-
+        user_emotion, user_intensity = self.router.profile.get_emotion()
+        print("🗣️ USER EMOTION:", user_emotion, user_intensity)
         return response
 
 
@@ -164,7 +165,7 @@ class Orchestrator:
 
             # Stop phrase simple (tu pourras enrichir)
             if text.strip().lower() in {"frank quit", "frank stop", "au revoir frank", "frank quitte"}:
-                self.tts.say("🔴 D'accord. Je m'arrête.")
+                self.tts.say("D'accord. Je m'arrête.")
                 break
 
             print(f"🗣️ User: {text}")

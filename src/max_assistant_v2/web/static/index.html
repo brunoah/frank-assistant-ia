@@ -145,6 +145,7 @@ micBtn.onclick = async () => {
             formData.append("token", TOKEN);
 
             try {
+
                 const response = await fetch("/voice", {
                     method: "POST",
                     body: formData
@@ -152,9 +153,21 @@ micBtn.onclick = async () => {
 
                 const data = await response.json();
 
+                console.log("DATA RECEIVED:", data);
+
                 responseDiv.innerText = data.response || "";
-                statusDiv.innerText = data.state?.toUpperCase() || "CALME";
-                stateDiv.innerText = data.state?.toUpperCase() || "CALME";
+
+                if (data.user_emotion) {
+                    stateDiv.innerText = data.user_emotion.toUpperCase();
+                    applyEmotionColor(data.user_emotion.toLowerCase());
+                } else {
+                    stateDiv.innerText = "NEUTRE";
+                    applyEmotionColor("neutre");
+                }
+
+                statusDiv.innerText = data.state
+                    ? data.state.toUpperCase()
+                    : "CALME";
 
                 if (data.response) {
                     const utter = new SpeechSynthesisUtterance(data.response);
@@ -170,6 +183,7 @@ micBtn.onclick = async () => {
             isRecording = false;
         };
 
+        // 🔥 CE QUI MANQUAIT
         mediaRecorder.start();
         micBtn.classList.add("listening");
         statusDiv.innerText = "ÉCOUTE...";
@@ -178,6 +192,7 @@ micBtn.onclick = async () => {
     } else {
         mediaRecorder.stop();
     }
+
 };
 
 /* Service Worker */
@@ -187,6 +202,19 @@ if ("serviceWorker" in navigator) {
     .catch((e) => console.log("SW error", e));
 }
 
+function applyEmotionColor(emotion) {
+
+    const map = {
+        "motivé": "#1f6feb",
+        "stressé": "#ff8c42",
+        "frustré": "#ff4c4c",
+        "fatigué": "#6c757d",
+        "heureux": "#2ecc71",
+        "neutre": "#0f111a"
+    };
+
+    document.body.style.background = map[emotion] || "#0f111a";
+}
 </script>
 
 </body>
