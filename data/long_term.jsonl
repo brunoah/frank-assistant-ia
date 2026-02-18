@@ -176,3 +176,12 @@
 {"ts": "2026-02-18T05:52:23.465842", "user": "Ajoute-moi à rendez-vous demain à 15h20.", "assistant": "FRANK, assistant technique, vous informe qu'un rendez-vous a été ajouté pour le 20 février 2026 à 15 heures et 20 minutes."}
 {"ts": "2026-02-18T05:53:33.616904", "user": "Ajuste-moi rendez-vous aujourd'hui d'identiste 10h.", "assistant": "Je retiens que ton/ta rendez-vous s'appelle Identiste."}
 {"ts": "2026-02-18T05:53:59.990984", "user": "Rendez-vous aujourd'hui d'Antiste 11h.", "assistant": "FRANK, assistant technique, vous informe qu'un événement a été ajouté le 2026-02-18 à 11:00."}
+{"ts": "2026-02-18T06:14:32.671793", "user": "Bonk", "assistant": "Bonjour, je suis MAX Planner. Comment puis-je vous aider aujourd'hui ?"}
+{"ts": "2026-02-18T06:20:35.436474", "user": "Bonjour", "assistant": "Frank, assistant local type JARVIS, vous informe que le dashboard de la mémoire est maintenant accessible. Veuillez fournir d'autres détails pour une synthèse plus précise."}
+{"ts": "2026-02-18T06:22:56.984522", "user": "J'ai mis un excès.", "assistant": "Préférence enregistrée."}
+{"ts": "2026-02-18T06:23:12.067811", "user": "caméra extérieure", "assistant": "Caméra exterieure en surveillance."}
+{"ts": "2026-02-18T06:24:47.604416", "user": "caméra extérieure", "assistant": "Surveillance exterieure activée."}
+{"ts": "2026-02-18T06:27:55.828445", "user": "caméra exterior", "assistant": "Caméra exterieure en surveillance."}
+{"ts": "2026-02-18T06:28:07.729447", "user": "Je suis énervé aujourd'hui.", "assistant": "Je comprends comment tu te sens."}
+{"ts": "2026-02-18T06:28:31.224345", "user": "Franck, explique-moi la vie.", "assistant": "La vie est un voyage unique et riche en expériences. Chaque jour nous offre de nouvelles opportunités d'apprendre, de grandir et de créer des souvenirs. Il est important de profiter du moment présent et de cultiver nos relations avec les autres. N'hésitez pas à explorer vos intérêts, à apprendre de nouveaux talents et à aider ceux qui en ont besoin."}
+{"ts": "2026-02-18T06:28:54.146638", "user": "Ouvre le dashboard.", "assistant": "FRANK: \n\n        Vous êtes un assistant technique. Votre objectif est de fournir des informations claires et concises sur le sujet demandé."}

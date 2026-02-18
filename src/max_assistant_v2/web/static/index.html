@@ -2,12 +2,22 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>FRANK Mobile</title>
+<title>FRANK</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- PWA -->
+<link rel="manifest" href="/static/manifest.json">
+<meta name="theme-color" content="#1f6feb">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="FRANK">
+<link rel="apple-touch-icon" href="/static/icon-192.png">
 
 <style>
 body {
     margin: 0;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
     background: #0f111a;
     color: white;
     font-family: Arial, sans-serif;
@@ -54,26 +64,62 @@ h1 {
     50% { transform: scale(1.1); }
     100% { transform: scale(1); }
 }
+
+#splash {
+    position: fixed;
+    inset: 0;
+    background: #0f111a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    letter-spacing: 6px;
+    z-index: 9999;
+    transition: opacity 0.6s ease;
+}
+
+#frank-state {
+    margin-top: 15px;
+    font-size: 14px;
+    opacity: 0.6;
+}
 </style>
 </head>
 
 <body>
 
+<div id="splash">
+  <h1>FRANK</h1>
+</div>
+
 <h1>FRANK</h1>
-<div id="status">Prêt</div>
+<div id="status">PRÊT</div>
 <div id="response"></div>
 <div class="mic-btn" id="mic">🎤</div>
+<div id="frank-state">CALME</div>
 
 <script>
+
 const TOKEN = "frank-local-token";
 const micBtn = document.getElementById("mic");
 const statusDiv = document.getElementById("status");
 const responseDiv = document.getElementById("response");
+const stateDiv = document.getElementById("frank-state");
 
 let mediaRecorder;
 let audioChunks = [];
 let isRecording = false;
 
+/* Splash */
+window.addEventListener("load", () => {
+    setTimeout(() => {
+        const splash = document.getElementById("splash");
+        splash.style.opacity = "0";
+        setTimeout(() => splash.remove(), 600);
+    }, 800);
+});
+
+/* Micro toggle */
 micBtn.onclick = async () => {
 
     if (!isRecording) {
@@ -89,9 +135,8 @@ micBtn.onclick = async () => {
 
         mediaRecorder.onstop = async () => {
 
-            statusDiv.innerText = "Traitement...";
+            statusDiv.innerText = "TRAITEMENT...";
             micBtn.classList.remove("listening");
-            isRecording = false;
 
             const blob = new Blob(audioChunks, { type: "audio/webm" });
 
@@ -99,35 +144,50 @@ micBtn.onclick = async () => {
             formData.append("file", blob);
             formData.append("token", TOKEN);
 
-            const response = await fetch("/voice", {
-                method: "POST",
-                body: formData
-            });
+            try {
+                const response = await fetch("/voice", {
+                    method: "POST",
+                    body: formData
+                });
 
-            const data = await response.json();
+                const data = await response.json();
 
-            responseDiv.innerText = data.response || "";
-            statusDiv.innerText = "Calme";
+                responseDiv.innerText = data.response || "";
+                statusDiv.innerText = data.state?.toUpperCase() || "CALME";
+                stateDiv.innerText = data.state?.toUpperCase() || "CALME";
 
-            const utter = new SpeechSynthesisUtterance(data.response);
-            utter.lang = "fr-FR";
-            speechSynthesis.speak(utter);
+                if (data.response) {
+                    const utter = new SpeechSynthesisUtterance(data.response);
+                    utter.lang = "fr-FR";
+                    speechSynthesis.speak(utter);
+                }
+
+            } catch (err) {
+                statusDiv.innerText = "ERREUR";
+                console.error(err);
+            }
+
+            isRecording = false;
         };
 
         mediaRecorder.start();
         micBtn.classList.add("listening");
-        statusDiv.innerText = "Écoute...";
+        statusDiv.innerText = "ÉCOUTE...";
         isRecording = true;
 
     } else {
-
         mediaRecorder.stop();
     }
 };
+
+/* Service Worker */
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/static/service-worker.js")
+    .then(() => console.log("SW registered"))
+    .catch((e) => console.log("SW error", e));
+}
+
 </script>
-
-
-
 
 </body>
 </html>

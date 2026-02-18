@@ -1,0 +1,16 @@
+{
+  "name": "FRANK Assistant",
+  "short_name": "FRANK",
+  "description": "Assistant IA personnel local sécurisé",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0f111a",
+  "theme_color": "#1f6feb",
+  "orientation": "portrait",
+  "icons": [
+    { "src": "/static/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/static/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/static/icon-1024.png", "sizes": "1024x1024", "type": "image/png" }
+  ]
+}
