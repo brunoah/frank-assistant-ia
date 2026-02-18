@@ -28,3 +28,20 @@ class Assistant:
     def run(self):
         print("🤖 FRANK Assistant v2 prêt.")
         self.orchestrator.run_forever()
+
+    def process_text(self, text: str) -> dict:
+        try:
+            response = self.orchestrator.process_text(text)
+
+            return {
+                "status": "ok",
+                "response": response,
+                "state": "calme"
+            }
+
+        except Exception as e:
+            return {
+                "status": "error",
+                "response": str(e),
+                "state": "error"
+            }

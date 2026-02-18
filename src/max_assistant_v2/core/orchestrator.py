@@ -78,6 +78,79 @@ class Orchestrator:
         print(f"\n🗣️ User État détecté : {emotion.upper()}")
         print(f"   Intensité : {bar} {intensity:.2f}\n")
     
+    def process_text(self, text: str) -> str:
+
+        print(f"🌐 INPUT EXTERNE: {text}")
+
+        # Etat réflexion
+        self.console_hud.set_state("reflexion", 0.6)
+
+        low = text.strip().lower()
+        if len(low) < 6 or low in {"ok", "oui", "non", "merci", "d'accord", "ça marche"}:
+            retrieved_items = []
+        else:
+            retrieved_items = self.vstore.search(
+                text,
+                k=settings.RAG_TOP_K,
+                min_score=settings.RAG_MIN_SCORE
+            )
+
+        def fmt_mem(it: dict) -> str:
+            md = it.get("metadata", {}) or {}
+            role = md.get("role", md.get("type", "mem"))
+            ts = md.get("ts", "")
+            score = it.get("score", 0.0)
+            txt = it.get("text", "")
+            return f"[{role} | {ts} | score={score:.2f}] {txt}".strip()
+
+        seen = set()
+        retrieved = []
+        for it in retrieved_items:
+            s = fmt_mem(it)
+            if s not in seen:
+                seen.add(s)
+                retrieved.append(s)
+
+        context = self.short_mem.render() + self.long_mem.render_last(n=12)
+
+        response = self.router.handle(
+            user_text=text,
+            context=context,
+            retrieved=retrieved
+        )
+
+        # IMPORTANT : garder la mémoire complète
+        self.short_mem.add(user=text, assistant=response)
+        self.long_mem.append(user=text, assistant=response)
+
+        ts = datetime.now(timezone.utc).isoformat()
+
+        decision = self.memory_writer.decide(
+            user_text=text,
+            assistant_text=response,
+            user_profile=None
+        )
+
+        if decision.should_write:
+            self.vstore.add(
+                decision.memory_text,
+                metadata={
+                    "role": "memory",
+                    "ts": ts,
+                    "confidence": decision.confidence,
+                    "tags": decision.tags,
+                    "kind": "fact"
+                }
+            )
+
+        # Emotion
+        self.record_user_emotion()
+
+        self.console_hud.set_state("calme", 0.3)
+
+        return response
+
+
     def run_forever(self):
         while True:
 
@@ -133,11 +206,7 @@ class Orchestrator:
 
             context = self.short_mem.render() + self.long_mem.render_last(n=12)
 
-            response = self.router.handle(
-                user_text=text,
-                context=context,
-                retrieved=retrieved
-            )
+            response = self.process_text(text)
 
             # Enregistrer émotion USER détectée
             self.record_user_emotion()

@@ -377,7 +377,6 @@ Phrase :
             if t == "emotion":
                 self.profile.set_emotion(value)
 
-                # 🔥 AJOUT ICI
                 self.profile.update_emotion_pattern(txt, value)
 
                 return "Je comprends comment tu te sens."

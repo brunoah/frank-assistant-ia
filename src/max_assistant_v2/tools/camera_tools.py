@@ -1,6 +1,8 @@
 import os
 import subprocess
 from datetime import datetime
+import shutil
+from typing import Dict
 
 class CameraTools:
     """
@@ -77,38 +79,34 @@ class CameraTools:
             "camera": camera
         }
 
-    def camera_open_stream(self, camera: str = "éxterieure") -> str:
-        """
-        Ouvre le flux RTSP dans ffplay si installé (FFmpeg).
-        Si ffplay n'est pas dispo, renvoie une aide.
-        """
-        rtsp_url = self._get_rtsp_url(camera=camera)
-
-        # Tentative ffplay (le plus stable pour lire RTSP)
+    def camera_open_stream(self, camera: str = "tapo") -> Dict:
         try:
-            subprocess.Popen(
-                [
-                    "ffplay",
-                    "-fflags", "nobuffer",
-                    "-rtsp_transport", "tcp",
-                    "-window_title", "FRANK - Tapo Camera",
-                    "-x", "960",
-                    "-y", "540",
-                    rtsp_url
-                ],
-                stdout=subprocess.DEVNULL,
-                stderr=subprocess.DEVNULL,
-            )
+            url = self._get_rtsp_url(camera)
 
-            return {
-                "status": "success",
-                "type": "stream",
-                "camera": camera
-            }
-        except FileNotFoundError:
+            # 1) Cherche ffplay
+            ffplay = shutil.which("ffplay")
+            vlc = shutil.which("vlc")
+
+            if ffplay:
+                cmd = [ffplay, "-rtsp_transport", "tcp", "-i", url]
+                subprocess.Popen(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                return {"status": "success", "type": "stream", "camera": camera, "player": "ffplay"}
+
+            # 2) Fallback VLC
+            if vlc:
+                cmd = [vlc, url]
+                subprocess.Popen(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                return {"status": "success", "type": "stream", "camera": camera, "player": "vlc"}
+
+
+            # 3) Rien trouvé -> erreur explicite
+            print("❌ CAMERA ERROR:", e) 
             return {
                 "status": "error",
-                "message": "ffplay introuvable ou flux inaccessible."
+                "type": "stream",
+                "camera": camera,
+                "message": "Aucun lecteur trouvé (ffplay ou vlc). Installe ffmpeg (ffplay) ou VLC et ajoute au PATH."
             }
+
         except Exception as e:
-            return f"Erreur ouverture flux caméra : {e}"
+            return {"status": "error", "type": "stream", "camera": camera, "message": str(e)}

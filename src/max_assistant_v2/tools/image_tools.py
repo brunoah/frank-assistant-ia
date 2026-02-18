@@ -18,7 +18,10 @@ class ImageTools:
 
         api_key = os.getenv("OPENAI_API_KEY", "").strip()
         if not api_key:
-            raise RuntimeError("OPENAI_API_KEY manquante dans data/.env")
+            print("⚠️ OPENAI_API_KEY absente → ImageTools désactivé")
+            self.enabled = False
+            return
+
 
         self.client = OpenAI(api_key=api_key)
 
@@ -26,6 +29,7 @@ class ImageTools:
         project_root = Path(__file__).resolve().parents[3]
         self.output_dir = project_root / "data" / "generated_images"
         self.output_dir.mkdir(parents=True, exist_ok=True)
+        self.enabled = True
 
     def image_generate(self, prompt: str, size: str = "1024x1024") -> str:
         """

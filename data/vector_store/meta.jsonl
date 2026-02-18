@@ -58,3 +58,13 @@
 {"text": "On s'en vient en s'interieur.", "metadata": {"role": "memory", "ts": "2026-02-18T03:22:47.036213+00:00", "confidence": 1.0, "tags": ["other"], "kind": "fact"}}
 {"text": "Photo prise.", "metadata": {"role": "memory", "ts": "2026-02-18T03:49:46.233216+00:00", "confidence": 1.0, "tags": ["other"], "kind": "fact"}}
 {"text": "Très bien, tu habites à Saint-pierre-de-léron.", "metadata": {"role": "memory", "ts": "2026-02-18T03:50:13.840418+00:00", "confidence": 1.0, "tags": ["identity"], "kind": "fact"}}
+{"text": "Caméra extérieure", "metadata": {"role": "memory", "ts": "2026-02-18T05:33:01.975976+00:00", "confidence": 1.0, "tags": ["project"], "kind": "fact"}}
+{"text": "Problème d'accès caméra.", "metadata": {"role": "memory", "ts": "2026-02-18T05:39:31.463355+00:00", "confidence": 1.0, "tags": ["constraint"], "kind": "fact"}}
+{"text": "Problème d'accès caméra.", "metadata": {"role": "memory", "ts": "2026-02-18T05:40:55.149563+00:00", "confidence": 0.9, "tags": ["other"], "kind": "fact"}}
+{"text": "Caméra extérieure en surveillance.", "metadata": {"role": "memory", "ts": "2026-02-18T05:46:18.057172+00:00", "confidence": 1.0, "tags": ["project"], "kind": "fact"}}
+{"text": "Caméra extérieure en surveillance.", "metadata": {"role": "memory", "ts": "2026-02-18T05:46:19.939346+00:00", "confidence": 1.0, "tags": ["project"], "kind": "fact"}}
+{"text": "Nom : Pauque", "metadata": {"role": "memory", "ts": "2026-02-18T05:51:16.685144+00:00", "confidence": 1.0, "tags": ["identity"], "kind": "fact"}}
+{"text": "Mode surveillance exterieure lancé.", "metadata": {"role": "memory", "ts": "2026-02-18T05:51:32.285194+00:00", "confidence": 0.9, "tags": ["preference"], "kind": "fact"}}
+{"text": "Rendez-vous ajouté pour le 20 février 2026 à 15h20.", "metadata": {"role": "memory", "ts": "2026-02-18T05:52:23.465842+00:00", "confidence": 1.0, "tags": ["project"], "kind": "fact"}}
+{"text": "Rendez-vous Identiste à 10h aujourd'hui", "metadata": {"role": "memory", "ts": "2026-02-18T05:53:33.617904+00:00", "confidence": 0.95, "tags": ["preference"], "kind": "fact"}}
+{"text": "Rendez-vous aujourd'hui d'Antiste à 11h.", "metadata": {"role": "memory", "ts": "2026-02-18T05:53:59.990984+00:00", "confidence": 1.0, "tags": ["project"], "kind": "fact"}}

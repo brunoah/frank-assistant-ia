@@ -145,3 +145,34 @@
 {"ts": "2026-02-18T03:50:13.840418", "user": "métaux de Saint-Pierre-de-Léron", "assistant": "Très bien, tu habites à Saint-pierre-de-léron."}
 {"ts": "2026-02-18T03:50:30.507431", "user": "météo de Saint-Pierre-d'Oleron.", "assistant": "Très bien, tu habites à Saint-pierre-d'oleron."}
 {"ts": "2026-02-18T03:50:50.735316", "user": "météo de Paris", "assistant": "FRANK:\n    \n        L'information récupérée indique que l'environnement actuel est caractérisé par une température de 3 degrés Celsius, avec une pluie modérée. Le ressenti thermique se situe à -1 degré Celsius, ce qui suggère une sensation de froid plus intense. En outre, le vent souffle à une vitesse de 17 kilomètres par heure."}
+{"ts": "2026-02-18T04:26:22.722617", "user": "Ouvre le dashboard mémoire.", "assistant": "MÉMOIRE RETROUVÉE (peut contenir des infos partielles, à recouper si besoin):\n    \n    USER:\n    \n        Tu es FRANK, assistant technique.\n\n        Voici des informations récupérées via un outil :\n\n        Dashboard mémoire ouvert."}
+{"ts": "2026-02-18T04:26:22.722617", "user": "Ouvre le dashboard mémoire.", "assistant": "MÉMOIRE RETROUVÉE (peut contenir des infos partielles, à recouper si besoin):\n    \n    USER:\n    \n        Tu es FRANK, assistant technique.\n\n        Voici des informations récupérées via un outil :\n\n        Dashboard mémoire ouvert."}
+{"ts": "2026-02-18T04:55:37.611774", "user": "Bonjour", "assistant": "Frank, l'assistant technique, est en train de travailler sur une mémoire récupérée. Le dashboard est ouvert et il doit synthétiser les informations clairement."}
+{"ts": "2026-02-18T04:55:37.612774", "user": "Bonjour", "assistant": "Frank, l'assistant technique, est en train de travailler sur une mémoire récupérée. Le dashboard est ouvert et il doit synthétiser les informations clairement."}
+{"ts": "2026-02-18T04:56:08.824178", "user": "Sous-titres réalisés par la communauté d'Amara.org", "assistant": "Screenshot enregistré : screenshots\\screenshot_20260218_055608.png"}
+{"ts": "2026-02-18T04:56:08.825178", "user": "Sous-titres réalisés par la communauté d'Amara.org", "assistant": "Screenshot enregistré : screenshots\\screenshot_20260218_055608.png"}
+{"ts": "2026-02-18T05:26:18.340798", "user": "Franck ?", "assistant": "D'accord Frank, je m'en souviendrai."}
+{"ts": "2026-02-18T05:27:07.115493", "user": "Toc !", "assistant": "Bonjour ! Comment puis-je vous aider aujourd'hui ?"}
+{"ts": "2026-02-18T05:28:29.445192", "user": "Allô ?", "assistant": "Bonjour ! Comment puis-je vous aider aujourd'hui ?"}
+{"ts": "2026-02-18T05:28:42.926426", "user": "Bonjour", "assistant": "Bonjour ! Comment puis-je vous aider aujourd'hui ?"}
+{"ts": "2026-02-18T05:29:01.241514", "user": "Ajoutons rendez-vous aujourd'hui à 10h dans le site.", "assistant": "FRANK, assistant technique, a reçu une information concernant un événement ajouté : rendez-vous le 2026-02-18 à 10:00."}
+{"ts": "2026-02-18T05:29:17.176461", "user": "Surveillance extérieure", "assistant": "Caméra exécutée."}
+{"ts": "2026-02-18T05:29:53.720603", "user": "Franck ?", "assistant": "D'accord Franck, je m'en souviendrai."}
+{"ts": "2026-02-18T05:30:05.328371", "user": "Surveillance extérieure", "assistant": "Caméra exécutée."}
+{"ts": "2026-02-18T05:32:49.761545", "user": "Franck ?", "assistant": "D'accord Frank, je m'en souviendrai."}
+{"ts": "2026-02-18T05:33:01.975976", "user": "caméra extérieure", "assistant": "Caméra exécutée."}
+{"ts": "2026-02-18T05:36:58.266034", "user": "caméra extérieure", "assistant": "Problème d'accès caméra."}
+{"ts": "2026-02-18T05:38:16.966115", "user": "caméra extérieure", "assistant": "Erreur caméra : name 'TAPO_EXTERIEURE_RTSP_URL' is not defined"}
+{"ts": "2026-02-18T05:39:31.462357", "user": "caméra intérieure", "assistant": "Problème d'accès caméra."}
+{"ts": "2026-02-18T05:40:55.149563", "user": "caméra extérieure", "assistant": "Problème d'accès caméra."}
+{"ts": "2026-02-18T05:41:44.880012", "user": "caméra extérieure", "assistant": "Problème d'accès caméra."}
+{"ts": "2026-02-18T05:42:24.225616", "user": "caméras extérieures", "assistant": "Problème d'accès caméra."}
+{"ts": "2026-02-18T05:46:18.057172", "user": "caméra extérieure", "assistant": "Caméra exterieure en surveillance."}
+{"ts": "2026-02-18T05:46:19.939346", "user": "caméra extérieure", "assistant": "Caméra exterieure en surveillance."}
+{"ts": "2026-02-18T05:51:16.684146", "user": "Pauque.", "assistant": "Bonjour, je suis MAX Planner. Comment puis-je vous aider aujourd'hui ?"}
+{"ts": "2026-02-18T05:51:32.284195", "user": "Foc.", "assistant": "Mode surveillance exterieure lancé."}
+{"ts": "2026-02-18T05:51:51.093580", "user": "affiche-moi la météo de Paris.", "assistant": "FRANK:\n    \n        Le temps est gris avec une légère pluie. La température ressentie se situe à -1 degré Celsius, tandis que le vent souffle à 24 kilomètres heure."}
+{"ts": "2026-02-18T05:51:52.361182", "user": "affiche-moi la météo de Paris.", "assistant": "FRANK:\n    \n        Le temps est gris avec une légère pluie. La température ressentie se situe à -1 degré Celsius, tandis que le vent souffle à 24 kilomètres heure."}
+{"ts": "2026-02-18T05:52:23.465842", "user": "Ajoute-moi à rendez-vous demain à 15h20.", "assistant": "FRANK, assistant technique, vous informe qu'un rendez-vous a été ajouté pour le 20 février 2026 à 15 heures et 20 minutes."}
+{"ts": "2026-02-18T05:53:33.616904", "user": "Ajuste-moi rendez-vous aujourd'hui d'identiste 10h.", "assistant": "Je retiens que ton/ta rendez-vous s'appelle Identiste."}
+{"ts": "2026-02-18T05:53:59.990984", "user": "Rendez-vous aujourd'hui d'Antiste 11h.", "assistant": "FRANK, assistant technique, vous informe qu'un événement a été ajouté le 2026-02-18 à 11:00."}
