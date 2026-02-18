@@ -14,6 +14,7 @@ from max_assistant_v2.core.behavior_analyzer import BehaviorAnalyzer
 from max_assistant_v2.tools.camera_tools import CameraTools
 from max_assistant_v2.tools.image_tools import ImageTools
 from max_assistant_v2.config.identity import FRANK_IDENTITY
+from max_assistant_v2.tools.webcam_tools import WebcamTools
 
 log = get_logger(__name__)
 
@@ -30,6 +31,8 @@ class Router:
         self.web = WebTools()
         self.camera = CameraTools(self.tool_registry)
         self.image = ImageTools(self.tool_registry)
+        self.webcam = WebcamTools(self.tool_registry)
+
 
         # Enregistrement des tools dans le registry
         self.tool_registry.register("web_search", self.web.web_search)
@@ -452,6 +455,22 @@ Phrase :
 
             return f"Projet supprimé : {p['title']}"
 
+        # =====================================
+        # 🔥 ROUTAGE DIRECT WEBCAM (propre)
+        # =====================================
+        low_txt = txt.lower()
+
+        if "webcam" in low_txt:
+            result = self.tool_registry.execute("webcam_open", camera_index=0)
+
+            phrases = [
+                "Webcam activée.",
+                "Caméra locale ouverte.",
+                "Affichage webcam lancé."
+            ]
+
+            return random.choice(phrases)
+     
 
         # -------------------------
         # 4) Planner / Tools / Answer
@@ -525,6 +544,30 @@ Phrase :
 
                 return "Caméra exécutée."
 
+            # =====================================
+            # 🔥 CAS SPECIAL WEBCAM
+            # =====================================
+            if tool in ["webcam_open", "webcam_close"]:
+
+                phrases_open = [
+                    "Webcam activée.",
+                    "Caméra locale ouverte.",
+                    "Affichage webcam lancé."
+                ]
+
+                phrases_close = [
+                    "Webcam fermée.",
+                    "Caméra locale désactivée.",
+                    "Affichage webcam arrêté."
+                ]
+
+                if tool == "webcam_open":
+                    return random.choice(phrases_open)
+
+                if tool == "webcam_close":
+                    return random.choice(phrases_close)
+
+                
             # =====================================
             # Screenshot → réponse directe
             # =====================================

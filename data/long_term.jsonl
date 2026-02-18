@@ -227,3 +227,29 @@
 {"ts": "2026-02-18T07:00:13.745814", "user": "Franck, je suis fatigué aujourd'hui.", "assistant": "Je comprends comment tu te sens."}
 {"ts": "2026-02-18T07:00:23.286469", "user": "Franck, ouvre le dashboard mémoire.", "assistant": "D'accord Frank, je m'en souviendrai."}
 {"ts": "2026-02-18T07:00:43.377884", "user": "Ouvre le dashboard de mémoire.", "assistant": "FRANK:\n    \n        Vous êtes FRANK, un assistant technique. Votre rôle est de fournir des informations claires et concises sur les sujets techniques. Pourriez-vous préciser le sujet concerné ?"}
+{"ts": "2026-02-18T09:24:40.068650", "user": "Ouvre la webcam.", "assistant": "Je n'arrive pas à accéder à la caméra."}
+{"ts": "2026-02-18T09:24:42.331403", "user": "Ouvre la webcam.", "assistant": "Je n'arrive pas à accéder à la caméra."}
+{"ts": "2026-02-18T09:26:25.821840", "user": "Ouvre la webcam", "assistant": "La caméra ne répond pas."}
+{"ts": "2026-02-18T09:26:27.603427", "user": "Ouvre la webcam", "assistant": "La caméra ne répond pas."}
+{"ts": "2026-02-18T09:29:42.356477", "user": "Ouvre la webcam !", "assistant": "Caméra locale ouverte."}
+{"ts": "2026-02-18T09:29:43.950289", "user": "Ouvre la webcam !", "assistant": "Caméra locale ouverte."}
+{"ts": "2026-02-18T09:31:35.199236", "user": "Surveillance extérieure", "assistant": "Caméra exterieure en surveillance."}
+{"ts": "2026-02-18T09:31:36.913086", "user": "Surveillance extérieure", "assistant": "Caméra exterieure en surveillance."}
+{"ts": "2026-02-18T09:31:50.601744", "user": "affiche la webcam", "assistant": "Surveillance interieure activée."}
+{"ts": "2026-02-18T09:31:52.307989", "user": "affiche la webcam", "assistant": "Surveillance interieure activée."}
+{"ts": "2026-02-18T09:32:09.071756", "user": "affiche la webcam", "assistant": "Surveillance interieure activée."}
+{"ts": "2026-02-18T09:32:11.080310", "user": "affiche la webcam", "assistant": "Surveillance interieure activée."}
+{"ts": "2026-02-18T09:33:46.098858", "user": "Surveillance extérieure.", "assistant": "Mode surveillance exterieure lancé."}
+{"ts": "2026-02-18T09:33:47.784192", "user": "Surveillance extérieure.", "assistant": "Mode surveillance exterieure lancé."}
+{"ts": "2026-02-18T09:34:07.462723", "user": "Surveillance intérieure", "assistant": "Affichage webcam lancé."}
+{"ts": "2026-02-18T09:34:09.198732", "user": "Surveillance intérieure", "assistant": "Affichage webcam lancé."}
+{"ts": "2026-02-18T09:34:24.449775", "user": "Affiche la webcam", "assistant": "Webcam activée."}
+{"ts": "2026-02-18T09:34:25.946851", "user": "Affiche la webcam", "assistant": "Webcam activée."}
+{"ts": "2026-02-18T09:38:39.322130", "user": "Surveillance extérieure", "assistant": "Mode surveillance exterieure lancé."}
+{"ts": "2026-02-18T09:38:40.990558", "user": "Surveillance extérieure", "assistant": "Mode surveillance exterieure lancé."}
+{"ts": "2026-02-18T09:38:58.215669", "user": "affiches la webcam", "assistant": "Affichage webcam lancé."}
+{"ts": "2026-02-18T09:38:59.782771", "user": "affiches la webcam", "assistant": "Affichage webcam lancé."}
+{"ts": "2026-02-18T09:39:18.762941", "user": "surveillance intérieure", "assistant": "Mode surveillance interieure lancé."}
+{"ts": "2026-02-18T09:39:20.448708", "user": "surveillance intérieure", "assistant": "Mode surveillance interieure lancé."}
+{"ts": "2026-02-18T09:44:04.943802", "user": "Pour moi là où est-ce qu'elle est", "assistant": "Surveillance interieure activée."}
+{"ts": "2026-02-18T09:44:06.602798", "user": "Pour moi là où est-ce qu'elle est", "assistant": "Surveillance interieure activée."}
