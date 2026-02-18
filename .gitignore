@@ -6,6 +6,7 @@ __pycache__/
 *.log
 *.tmp
 *.egg-info/
+*.pem
 
 # Virtual env
 .venv/
@@ -16,6 +17,7 @@ venv/
 .env
 data/.env
 data/generated_images/
+screenshots/
 
 # Data dynamic
 data/*.json
