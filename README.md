@@ -1,6 +1,5 @@
-# 🤖 FRANK Assistant v2.0
-
-**FRANK** est un assistant IA **local** et **modulaire**, pensé pour
+# 🤖 F.R.A.N.K Assistant IA - (Flexible Reactive Autonomous Neural Kernel)
+**F.R.A.N.K** est un assistant IA **local** et **modulaire**, pensé pour
 servir de base solide à un assistant vocal évolutif : orchestration
 d'outils (plugins), mémoire persistante, RAG local, HUD dynamique et
 **API Web** (FastAPI).
@@ -14,7 +13,7 @@ d'outils (plugins), mémoire persistante, RAG local, HUD dynamique et
 Construire un assistant IA **offline-first**, extensible, robuste et
 professionnel.
 
-FRANK n'est pas un simple script vocal : c'est une architecture complète
+F.R.A.N.K n'est pas un simple script vocal : c'est une architecture complète
 (core + tools + mémoire + UI + API) conçue pour durer.
 
 ------------------------------------------------------------------------
@@ -185,7 +184,7 @@ python scripts/run.py
 
 ## 🔐 Configuration (.env)
 
-FRANK charge `data/.env` au démarrage.
+F.R.A.N.K charge `data/.env` au démarrage.
 
 Exemple **sans secrets** :
 
@@ -263,4 +262,4 @@ Projet initié en 2026
 
 ------------------------------------------------------------------------
 
-**FRANK Assistant --- Assistant IA local modulaire, pensé pour durer.**
+**F.R.A.N.K Assistant --- Assistant IA local modulaire, pensé pour durer.**
