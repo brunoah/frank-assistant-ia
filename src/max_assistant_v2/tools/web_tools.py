@@ -34,9 +34,9 @@ class WebTools:
         wind = data.get("wind", {}).get("speed", None)
         if wind is not None:
             wind_kmh = round(float(wind) * 3.6)
-            return f"À {name}, il fait {temp} degrés, {desc}. Ressenti {feels} degrés. Vent {wind_kmh} kilomètres heure."
+            return f"Il fait {temp} degrés, {desc}. Ressenti {feels} degrés. Vent {wind_kmh} kilomètres heure."
         else:
-            return f"À {name}, il fait {temp} degrés, {desc}. Ressenti {feels} degrés."
+            return f"Il fait {temp} degrés, {desc}. Ressenti {feels} degrés."
 
     def web_search(self, query: str, num_results: int = 5) -> str:
         api_key = os.getenv("SERPER_API_KEY")

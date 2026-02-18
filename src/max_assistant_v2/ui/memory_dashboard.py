@@ -391,7 +391,6 @@ class MemoryDashboardWindow:
 
 
         # Preferences
-        # Preferences
         for i in self.tree_prefs.get_children():
             self.tree_prefs.delete(i)
 

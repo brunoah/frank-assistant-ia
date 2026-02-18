@@ -84,7 +84,7 @@ class PiperTTS:
         # --- Micro naturalisation texte ---
         text = self._naturalize_text(text, user_emotion)
 
-        print(f"\n🟢 FRANK: {text}\n")
+        print(f"\n🟢 {text}\n")
 
         if not text.strip():
             return

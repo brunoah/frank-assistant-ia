@@ -47,3 +47,14 @@
 {"text": "Un événement de petit déjeuner a été ajouté pour le 2026-02-17 à 09:00.", "metadata": {"role": "memory", "ts": "2026-02-17T15:27:17.690599+00:00", "confidence": 1.0, "tags": ["project"], "kind": "fact"}}
 {"text": "Ouvre les services Windows.", "metadata": {"role": "memory", "ts": "2026-02-17T15:36:54.397761+00:00", "confidence": 1.0, "tags": ["project"], "kind": "fact"}}
 {"text": "Ouvre ce petit farid ! Mou touti ! Il y a un truc ? Franck !", "metadata": {"role": "memory", "ts": "2026-02-17T15:43:16.052113+00:00", "confidence": 1.0, "tags": ["other"], "kind": "fact"}}
+{"text": "Surveillance extérieure.", "metadata": {"role": "memory", "ts": "2026-02-17T18:34:55.644965+00:00", "confidence": 1.0, "tags": ["preference"], "kind": "fact"}}
+{"text": "Surveillance intérieure activée.", "metadata": {"role": "memory", "ts": "2026-02-17T18:35:17.679855+00:00", "confidence": 1.0, "tags": ["other"], "kind": "fact"}}
+{"text": "Caméra extérieure activée.", "metadata": {"role": "memory", "ts": "2026-02-17T18:36:04.368360+00:00", "confidence": 1.0, "tags": ["project"], "kind": "fact"}}
+{"text": "Caméra interieure en surveillance.", "metadata": {"role": "memory", "ts": "2026-02-17T18:36:50.001281+00:00", "confidence": 1.0, "tags": ["preference"], "kind": "fact"}}
+{"text": "Ouvre le dashboard.", "metadata": {"role": "memory", "ts": "2026-02-17T18:37:26.577317+00:00", "confidence": 1.0, "tags": ["other"], "kind": "fact"}}
+{"text": "Surveillance extérieure activée.", "metadata": {"role": "memory", "ts": "2026-02-18T02:40:02.370792+00:00", "confidence": 1.0, "tags": ["other"], "kind": "fact"}}
+{"text": "Profil résumé: Sous-titres réalisés par la communauté d'Amara.org", "metadata": {"role": "memory", "ts": "2026-02-18T02:49:01.228527+00:00", "confidence": 1.0, "tags": ["identity"], "kind": "fact"}}
+{"text": "Très bien, tu habites à Paris.", "metadata": {"role": "memory", "ts": "2026-02-18T02:49:27.075332+00:00", "confidence": 1.0, "tags": ["identity"], "kind": "fact"}}
+{"text": "On s'en vient en s'interieur.", "metadata": {"role": "memory", "ts": "2026-02-18T03:22:47.036213+00:00", "confidence": 1.0, "tags": ["other"], "kind": "fact"}}
+{"text": "Photo prise.", "metadata": {"role": "memory", "ts": "2026-02-18T03:49:46.233216+00:00", "confidence": 1.0, "tags": ["other"], "kind": "fact"}}
+{"text": "Très bien, tu habites à Saint-pierre-de-léron.", "metadata": {"role": "memory", "ts": "2026-02-18T03:50:13.840418+00:00", "confidence": 1.0, "tags": ["identity"], "kind": "fact"}}

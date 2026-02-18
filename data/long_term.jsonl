@@ -127,3 +127,21 @@
 {"ts": "2026-02-17T15:37:35.892693", "user": "ou on spotifie", "assistant": "FRANK:\n    \n        D'après les informations récupérées, il semble que vous ayez un problème lors de l'exécution de la commande open_app. L'erreur indique que le fichier spécifié n'a pas été trouvé.\n\n        Pour résoudre ce problème, veuillez vérifier si le chemin du fichier est correct et si le fichier existe bien sur votre ordinateur. Si vous avez modifié le nom du fichier ou si vous l'avez déplacé, assurez-vous de mettre à jour le chemin correspondant dans la commande open_app.\n\n        En cas de besoin, n'hésitez pas à me demander de vous aider à résoudre ce problème."}
 {"ts": "2026-02-17T15:43:16.052113", "user": "Ouvre ce petit farid ! Mou touti ! Il y a un truc ? Franck !", "assistant": "D'accord Franck, je m'en souviendrai."}
 {"ts": "2026-02-17T16:02:16.389365", "user": "Qui es-tu ?", "assistant": "\nJe suis FRANK, assistant technique intelligent conçu par Bruno Ahée.\n\n🔹 Mon rôle principal :\n- Automatisation système\n- Assistance vocale avancée\n- Analyse comportementale\n- Gestion de projets\n- Orchestration d’outils locaux et web\n\n🔹 Architecture :\n- Structure modulaire en Python\n- Mémoire adaptative intelligente\n- Planification via LLM\n- HUD dynamique\n- Synthèse vocale adaptative\n\nJe suis pensé comme un assistant évolutif et analytique,\norienté performance et précision technique.\n"}
+{"ts": "2026-02-17T18:34:55.644965", "user": "Surveillance extérieure.", "assistant": "Caméra exterieure en surveillance."}
+{"ts": "2026-02-17T18:35:17.679855", "user": "Surveillance intérieure", "assistant": "Surveillance interieure activée."}
+{"ts": "2026-02-17T18:36:04.368360", "user": "caméra extérieure je ne peux pas te marquer je reviens ensuite mais pas caméra", "assistant": "Surveillance exterieure activée."}
+{"ts": "2026-02-17T18:36:36.341074", "user": "Je suis content aujourd'hui.", "assistant": "Je comprends comment tu te sens."}
+{"ts": "2026-02-17T18:36:50.000282", "user": "Sous-titres réalisés par l'Amara.org", "assistant": "Caméra interieure en surveillance."}
+{"ts": "2026-02-17T18:37:08.529416", "user": "Je suis déprimé aujourd'hui. Déprimé, je suis pas sûr qu'ils comprennent encore.", "assistant": "Je comprends comment tu te sens."}
+{"ts": "2026-02-17T18:37:26.577317", "user": "Ouvre le dashboard.", "assistant": "FRANK: \n\n        Je suis FRANK, votre assistant technique. J'ai reçu une information de la mémoire ouverte. Vous avez un dashboard mémoire ouvert."}
+{"ts": "2026-02-18T02:39:40.685885", "user": "Dis bonjour", "assistant": "Bonjour Bruno !"}
+{"ts": "2026-02-18T02:40:02.370792", "user": "Surveillance extérieure.", "assistant": "Surveillance exterieure activée."}
+{"ts": "2026-02-18T02:49:01.228527", "user": "Sous-titres réalisés par la communauté d'Amara.org", "assistant": "Capture effectuée."}
+{"ts": "2026-02-18T02:49:27.074333", "user": "métal de Paris", "assistant": "Très bien, tu habites à Paris."}
+{"ts": "2026-02-18T02:50:05.839188", "user": "Météo de Paris", "assistant": "FRANK:\n    \n    Il fait actuellement 4 degrés à Paris avec un ciel couvert et un ressenti de 0 degrés. Le vent est de 17 km/h."}
+{"ts": "2026-02-18T03:22:47.036213", "user": "On s'en vient en s'interieur.", "assistant": "Surveillance interieure activée."}
+{"ts": "2026-02-18T03:23:06.720049", "user": "Surveillance extérieure", "assistant": "Surveillance exterieure activée."}
+{"ts": "2026-02-18T03:49:46.233216", "user": "Sous-titrage ST' 501", "assistant": "Photo prise."}
+{"ts": "2026-02-18T03:50:13.840418", "user": "métaux de Saint-Pierre-de-Léron", "assistant": "Très bien, tu habites à Saint-pierre-de-léron."}
+{"ts": "2026-02-18T03:50:30.507431", "user": "météo de Saint-Pierre-d'Oleron.", "assistant": "Très bien, tu habites à Saint-pierre-d'oleron."}
+{"ts": "2026-02-18T03:50:50.735316", "user": "météo de Paris", "assistant": "FRANK:\n    \n        L'information récupérée indique que l'environnement actuel est caractérisé par une température de 3 degrés Celsius, avec une pluie modérée. Le ressenti thermique se situe à -1 degré Celsius, ce qui suggère une sensation de froid plus intense. En outre, le vent souffle à une vitesse de 17 kilomètres par heure."}
