@@ -15,6 +15,7 @@ from max_assistant_v2.tools.camera_tools import CameraTools
 from max_assistant_v2.tools.image_tools import ImageTools
 from max_assistant_v2.config.identity import FRANK_IDENTITY
 from max_assistant_v2.tools.webcam_tools import WebcamTools
+from max_assistant_v2.tools.system_reset_tools import SystemResetTools
 
 log = get_logger(__name__)
 
@@ -41,6 +42,14 @@ class Router:
         self.tool_registry.register("memory_dashboard", open_memory_dashboard)
         
         self.projects = ProjectManager("data/projects.json")
+
+        # ✅ RESET TOTAL : enregistre "system_full_reset" dans le registry
+        self.reset_tools = SystemResetTools(
+            self.tool_registry,
+            profile=self.profile,
+            projects_manager=self.projects
+        )
+        self._pending_full_reset = False
 
     def detect_implicit_emotion(self, text: str):
         text = (text or "").lower()
@@ -162,12 +171,54 @@ Phrase :
             "présente-toi"
         ]
 
+        # =====================================
+        # 🔐 CONFIRMATION RESET TOTAL (prioritaire)
+        # =====================================
+        if getattr(self, "_pending_full_reset", False):
+            ans = (user_text or "").strip().lower()
+
+            if ans in ["oui", "ok", "confirme", "yes", "y"]:
+                self._pending_full_reset = False
+                return self.tool_registry.execute("system_full_reset")
+
+            if ans in ["non", "annule", "stop", "no", "n"]:
+                self._pending_full_reset = False
+                return "Réinitialisation annulée."
+
+            return "Réponds par 'oui' pour confirmer la réinitialisation totale, ou 'non' pour annuler."
+
         if any(trigger in user_text.lower() for trigger in identity_triggers):
             return FRANK_IDENTITY
 
         txt = (user_text or "").strip()
 
         low = txt.lower()
+
+        # =====================================
+        # 🧨 COMMANDE RESET TOTAL (avec confirmation)
+        # =====================================
+        reset_triggers = [
+            "réinitialisation totale",
+            "reinitialisation totale",
+            "reset total",
+            "reset",
+            "factory reset",
+            "efface tout",
+            "supprime tout",
+            "vide toute ta mémoire",
+            "vide toute la memoire",
+            "vide la memoire",
+            "vide la mémoire",
+        ]
+
+        if any(t in low for t in reset_triggers):
+            self._pending_full_reset = True
+            return (
+                "Attention : cette action supprimera définitivement toute ma mémoire, "
+                "les rendez-vous, les projets, la mémoire long terme et l'index. "
+                "Confirme en répondant : OUI / NON."
+            )
+
 
         # =========================
         # 0) Analyse comportementale (déterministe)

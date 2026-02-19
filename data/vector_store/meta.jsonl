@@ -1,2 +1,2 @@
-{"text": "Nom de l'utilisateur : Bruno", "metadata": {"role": "memory", "ts": "2026-02-19T10:51:04.336006+00:00", "confidence": 1.0, "tags": ["identity"], "kind": "fact"}}
-{"text": "Je m'appelle Bruno", "metadata": {"role": "memory", "ts": "2026-02-19T10:51:09.703240+00:00", "confidence": 1.0, "tags": ["identity"], "kind": "fact"}}
+{"text": "Bruno est mon utilisateur.", "metadata": {"role": "memory", "ts": "2026-02-19T11:10:10.238839+00:00", "confidence": 1.0, "tags": ["identity"], "kind": "fact"}}
+{"text": "J'ai rencontré Bruno, mon assistant.", "metadata": {"role": "memory", "ts": "2026-02-19T11:10:14.140188+00:00", "confidence": 1.0, "tags": ["identity"], "kind": "fact"}}
